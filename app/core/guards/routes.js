@@ -13,7 +13,7 @@ routes.delete('/unities/:unity_id', UnityController.delete)
 routes.post('/unities/create', UnityController.store)
 
 routes.get('/unities/list/:unity_id/games', GameController.list)
-routes.delete('/unities/:game_id/games', GameController.delete)
+routes.delete('/unities/:unity_id/games', GameController.delete)
 routes.post('/unities/create/:unity_id/games', GameController.store)
 
 module.exports = routes

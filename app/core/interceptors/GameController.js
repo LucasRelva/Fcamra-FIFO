@@ -4,7 +4,13 @@ const slugify = require('slugify')
 
 module.exports = {
     async list(req, res) {
+        const { unity_id } = req.params
 
+        const unity = await Unity.findByPk(unity_id, {
+            include: { association: 'games', through: { attributes: ['unity_id'] }}
+        })
+
+        return res.json(unity.games)
     },
 
     async store(req, res) {
@@ -25,7 +31,7 @@ module.exports = {
             }
         })
 
-        if (!created && !is_active) {
+        if (!created) {
             game.update({ is_active: true })
         }
 
@@ -35,6 +41,21 @@ module.exports = {
     },
 
     async delete(req, res) {
+        const { unity_id } = req.params
+        const { name } = req.body
 
+        const unity = await Unity.findByPk(unity_id) 
+        
+        if (!unity) return res.status(400).json({ error: 'Unity not found' })
+
+        const game = await Game.findOne({
+            where: {
+                name: name
+            }
+        })
+
+        await unity.removeGame(game)
+
+        return res.json(game)
     },
 }

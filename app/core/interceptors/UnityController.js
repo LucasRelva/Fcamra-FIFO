@@ -28,7 +28,7 @@ module.exports = {
         
         await unity.destroy({
             where: {
-                id: unity
+                id: unity_id
             }
         })
 
