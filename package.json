@@ -1,0 +1,21 @@
+{
+  "name": "fcamara-fifo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/LucasRelva/Fcamra-FIFO.git",
+  "author": "Lucas Relva <lucas-1880@outlook.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon app/core/config/server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5",
+    "slugify": "^1.4.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6",
+    "sequelize-cli": "^6.2.0"
+  }
+}

@@ -4,6 +4,5 @@ node_modules
 yarn.lock
 .editorconfig
 .yarnrc
-*.js
-*.js.map
+
 
