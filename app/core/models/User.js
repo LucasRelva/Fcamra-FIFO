@@ -10,9 +10,6 @@ class User extends Model{
             tableName: 'users',
         })
     }
-
-    static associate(models) {
-    }
 }
 
 module.exports = User

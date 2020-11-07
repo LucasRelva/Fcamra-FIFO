@@ -4,9 +4,7 @@ const User = require('../models/User')
 module.exports = {
     async list(req, res) {
         const users = await User.findAll();
-        console.log(users)
-
-        return res.status(400);
+        return res.json(users)
     },
 
     async store(req, res) {
