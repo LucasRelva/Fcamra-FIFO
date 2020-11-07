@@ -2,16 +2,24 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('users', {
+    await queryInterface.createTable('match', {
       id: {
         type: Sequelize.INTEGER,
-        primaryKey: true,
         autoIncrement: true,
+        primaryKey: true,
         allowNull: false,
       },
-      name: {
-        type: Sequelize.STRING,
+      game_id: {
+        type: Sequelize.INTEGER,
         allowNull: false,
+        references: { model: 'games', key: 'id'},
+        onUpdate:  'CASCADE',
+        onDelete: 'CASCADE',
+      },
+      completed: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
       },
       created_at: {
         type: Sequelize.DATE,
@@ -21,14 +29,10 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false,
       },
-      is_active: {
-        type: Sequelize.BOOLEAN,
-        allowNull: false,
-      },
     });
   },
 
   down: async (queryInterface) => {
-    await queryInterface.dropTable('users');
+    await queryInterface.dropTable('match');
   }
 };

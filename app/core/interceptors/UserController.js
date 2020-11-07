@@ -4,6 +4,7 @@ const User = require('../models/User')
 module.exports = {
     async list(req, res) {
         const users = await User.findAll();
+        if(!user) res.status(404).json({error:'error',msg: 'users not found!'})
         return res.json(users)
     },
 

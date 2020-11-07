@@ -10,6 +10,10 @@ class User extends Model{
             tableName: 'users',
         })
     }
+
+    static associate(models) {
+        this.belongsToMany(models.Match, { foreignKey: 'match_id', through: 'match_user', as: 'matchs' })
+    }
 }
 
 module.exports = User
