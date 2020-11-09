@@ -20,10 +20,10 @@ FIFO funciona com várias tecnologias supermaneiras!
   
 # Participantes
  Esse é o nosso time. Garanto que somos legais:
-  - Allejandro
-    - [GitHub](https://github.com/Allejandropg)
   - Alef
     - [GitHub](https://github.com/alefrocha99)
+  - Allejandro
+    - [GitHub](https://github.com/Allejandropg)
   - Leonardo
     - [Linkedin](https://www.linkedin.com/in/leonardo-quintiliano-579829155/)
   - Lucas
