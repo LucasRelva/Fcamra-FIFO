@@ -37,12 +37,16 @@ FIFO funciona com várias tecnologias supermaneiras!
 # Participantes
  Esse é o nosso time. Garanto que somos legais:
   - Alef
-    - [GitHub](https://github.com/alefrocha99) [Linkedin](https://www.linkedin.com/in/alef-rocha-b12719127)
+    - [GitHub](https://github.com/alefrocha99) 
+    - [Linkedin](https://www.linkedin.com/in/alef-rocha-b12719127)
   - Allejandro
-    - [GitHub](https://github.com/Allejandropg) [Linkedin](https://www.linkedin.com/in/allejandro-palhares-a44ab66b/)
+    - [GitHub](https://github.com/Allejandropg) 
+    - [Linkedin](https://www.linkedin.com/in/allejandro-palhares-a44ab66b/)
   - Leonardo
-    - [GitHub](https://github.com/LeonardoQuintiliano) [Linkedin](https://www.linkedin.com/in/leonardo-quintiliano-579829155/)
+    - [GitHub](https://github.com/LeonardoQuintiliano) 
+    - [Linkedin](https://www.linkedin.com/in/leonardo-quintiliano-579829155/)
   - Lucas
-    - [GitHub](https://github.com/LucasRelva) [Linkedin](https://www.linkedin.com/in/lucasrelva/)
+    - [GitHub](https://github.com/LucasRelva) 
+    - [Linkedin](https://www.linkedin.com/in/lucasrelva/)
   - Rute
     - [Linkedin](https://www.linkedin.com/in/maria-rute/)
