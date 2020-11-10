@@ -12,7 +12,7 @@ class User extends Model{
     }
 
     static associate(models) {
-        this.belongsToMany(models.Match, { foreignKey: 'match_id', through: 'match_user', as: 'matchs' })
+        this.belongsToMany(models.Match, { foreignKey: 'user_id', through: 'match_user', as: 'matchs' })
     }
 }
 

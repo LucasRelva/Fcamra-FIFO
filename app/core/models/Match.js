@@ -12,7 +12,7 @@ class Match extends Model{
 
     static associate(models) {
         this.belongsTo(models.Game, { foreignKey: 'game_id', as: 'game'})
-        this.belongsToMany(models.User, { foreignKey: 'user_id', through: 'match_user', as: 'matchs' })
+        this.belongsToMany(models.User, { foreignKey: 'match_id', through: 'match_user', as: 'matchs' })
     }
 }
 
