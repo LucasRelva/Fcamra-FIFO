@@ -14,7 +14,7 @@ class Game extends Model{
 
     static associate(models) {
         this.belongsToMany(models.Unity, { foreignKey: 'game_id', through: 'unity_games', as: 'unities' })
-        this.hasMany(models.Match, { as: 'matchs' })
+        this.hasMany(models.Match, {foreignKey: 'game_id', as: 'matchs' })
     }
 }
 
