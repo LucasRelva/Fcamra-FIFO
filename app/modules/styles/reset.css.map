@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACA,IAAI;EACF,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,cAAc,EAAE,MAAM;EACtB,WAAW,EAAE,mBAAmB;EAChC,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,KAAK;;AAGf,gBAAgB;EACd,UAAU,EAAE,OAAO",
+"sources": ["reset.scss"],
+"names": [],
+"file": "reset.css"
+}

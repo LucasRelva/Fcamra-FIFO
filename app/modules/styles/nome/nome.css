@@ -1,0 +1,20 @@
+
+.conteudo{
+
+  width: auto;
+  height: auto;
+  display:flex;
+  justify-content: center;
+  border:2px solid black;
+
+}
+
+.nome{
+  
+  display: flex;
+  width: auto;
+  height: auto;
+  align-items:center;
+  flex-direction: column;
+
+}
