@@ -22,9 +22,12 @@ FIFO funciona com várias tecnologias supermaneiras!
 
 # Comandos que fazem tudo funcionar
 
-  - npm run dev || yarn dev                                   Abre o servidor em localhost
-  - npx sequelize db:create || yarn sequelize db:create       Cria o banco de dados especificado no arquivo .sequelizerc
-  - npx sequelize db:migrate || yarn sequelize db:migrate     Executa as *migrations pendentes
+  - npm run dev || yarn dev                                   
+    - Abre o servidor em localhost
+  - npx sequelize db:create || yarn sequelize db:create       
+    - Cria o banco de dados especificado no arquivo .sequelizerc
+  - npx sequelize db:migrate || yarn sequelize db:migrate     
+    - Executa as *migrations pendentes
 
 # Links
  Desenhos, assets, planejamento, etc etc:
