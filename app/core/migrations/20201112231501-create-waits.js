@@ -3,24 +3,13 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
 
-    await queryInterface.createTable('unity_games', {
+    await queryInterface.createTable('waits', { 
+
       id: {
         type: Sequelize.INTEGER,
-        autoIncrement: true,
         primaryKey: true,
+        autoIncrement: true,
         allowNull: false,
-      },
-      is_active: {
-        type: Sequelize.BOOLEAN,
-        allowNull: false,
-        defaultValue: true,
-      },
-      unity_id: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {model: 'unities', key: 'id'},
-        onUpdate:  'CASCADE',
-        onDelete: 'CASCADE',
       },
       game_id: {
         type: Sequelize.INTEGER,
@@ -28,6 +17,17 @@ module.exports = {
         references: {model: 'games', key: 'id'},
         onUpdate:  'CASCADE',
         onDelete: 'CASCADE',
+      },
+      user_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {model: 'users', key: 'id'},
+        onUpdate:  'CASCADE',
+        onDelete: 'CASCADE',
+      },
+      status: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
       },
       created_at: {
         type: Sequelize.DATE,
@@ -37,11 +37,14 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false,
       },
-    });
+
+     });
+
   },
 
   down: async (queryInterface, Sequelize) => {
-
-    await queryInterface.dropTable('unity_games');
+    
+      await queryInterface.dropTable('waits');
+     
   }
 };
