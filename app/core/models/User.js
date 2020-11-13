@@ -3,8 +3,7 @@ const { Model, DataTypes } = require('sequelize')
 class User extends Model{
     static init(sequelize){
         super.init({
-            name: DataTypes.STRING,
-            is_active: DataTypes.BOOLEAN,
+            email: DataTypes.STRING,
         }, {
             sequelize,
             tableName: 'users',
@@ -12,7 +11,7 @@ class User extends Model{
     }
 
     static associate(models) {
-        this.belongsToMany(models.Match, { foreignKey: 'user_id', through: 'match_user', as: 'matchs' })
+        this.hasMany(models.Wait, { foreignKey: 'user_id', as: 'waits' })
     }
 }
 
