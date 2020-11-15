@@ -4,14 +4,14 @@ const User = require('../models/User')
 module.exports = {
     async list(req, res) {
         const users = await User.findAll();
-        if(!user) res.status(404).json({error:'error',msg: 'users not found!'})
+        if(!users) res.status(404).json({error:'error',msg: 'users not found!'})
         return res.json(users)
     },
 
     async store(req, res) {
-        const { name, is_active } = req.body
+        const { email } = req.body
 
-        const user = await User.create({ name, is_active })
+        const user = await User.create({ email })
 
         return res.json(user)
     },
