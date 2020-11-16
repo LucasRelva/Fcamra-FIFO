@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../styles/selecao/selecao_caixa_botao.css">
     <link rel="stylesheet" href="../styles/selecao/selecao_instrucao.css">
     <link rel="stylesheet" href="../styles/selecao/selecao_logo_grande.css">
-    <link rel="stylesheet" href="../styles/estilos-unidade.css">
+    <link rel="stylesheet" href="../styles/estilos-unidade.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
   </head>
   <body class="primeira-pagina">
@@ -23,11 +23,28 @@
       <h2 class="selecao_instrucao">Selecione sua unidade FCamara</h2>
 
       <div class="selecao_caixa_botao">
-        <button class="selecao_botao"><a href="#">Santos</a></button>
+        <button class="selecao_botao" onclick="exemplo()"><a href="#">Santos</a></button>
         <button class="selecao_botao"> <a href="#">São Paulo</a> </button>
       </div>
 
     </div>
 
   </body>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script>
+    function  exemplo(){
+      Toastify({
+        text: "This is a toast",
+        duration: 3000, 
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: 'left', // `left`, `center` or `right`
+        backgroundColor: "#FC6027",
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        onClick: function(){} // Callback after click
+      }).showToast();
+    }
+  </script>
 </html>

@@ -1,9 +1,9 @@
 const express = require('express')
-const UnityController = require('../interceptors/UnityController')
-const GameController = require('../interceptors/GameController')
-const UserController = require('../interceptors/UserController')
+const userRoutes = require('./user.routes');
+const gameRoutes = require('./game.routes');
+const unityRoutes = require('./unity.routes');
 
-const routes = express.Router()
+const routes = express.Router();
 
 routes.get('/', (req, res) => {
    return res.send('Ta daora! preocupa não, pode ir pro proximo passo.')
@@ -12,22 +12,16 @@ routes.get('/', (req, res) => {
 /**
  * Rotas da Unidade
  */
-routes.get('/unities/list', UnityController.list)
-routes.delete('/unities/:unity_id', UnityController.delete)
-routes.post('/unities/create', UnityController.store)
-
-/**
- * Rotas de Game com Unidade
- */
-routes.get('/unities/list/:unity_id/games', GameController.list)
-routes.delete('/unities/:unity_id/games', GameController.delete)
-routes.post('/unities/create/:unity_id/games', GameController.store)
+routes.use('/unities/',unityRoutes)
 
 /**
  * Rotas de Usuário
  */
-routes.get('/users/list', UserController.list)
-routes.delete('/users/:user_id', UserController.delete)
-routes.post('/users/create', UserController.store)
+routes.use('/users',userRoutes);
+
+/**
+ * Rotas de Usuário
+ */
+routes.use('/game',gameRoutes);
 
 module.exports = routes

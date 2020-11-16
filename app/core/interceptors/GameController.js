@@ -1,16 +1,52 @@
-const Game = require('../models/Game')
-const Unity = require('../models/Unity')
-const slugify = require('slugify')
+const Game = require('../models/Game');
+const Unity = require('../models/Unity');
+const Wait = require('../models/Wait');
+const slugify = require('slugify');
+const Sequelize, { Op } = require('sequelize');
 
 module.exports = {
     async list(req, res) {
         const { unity_id } = req.params
+       /*  const unity = await Unity.findByPk(unity_id, {
+            include: { 
+                association: 'games', 
+                through: { 
+                    attributes: ['unity_id'] 
+                }
+            }
+        });
 
-        const unity = await Unity.findByPk(unity_id, {
-            include: { association: 'games', through: { attributes: ['unity_id'] }}
-        })
+        return res.json(unity.games); */
 
-        return res.json(unity.games)
+        const games = await Game.findAll({
+            attributes: { 
+                name,
+                slug,
+                include: [[Sequelize.fn("COUNT", Sequelize.col("waits.id")), "totalWait"]] 
+            },
+            include: {
+                association: 'waits',
+                through: {
+                    attributes: ['game_id']
+                },
+                where: {
+                    status: {
+                        [Op.in]: [0,1]
+                    }
+                }
+            },
+            include:{
+                association: 'unities',
+                through: {
+                    attributes: ['game_id']
+                },
+                where: {
+                    unity_id
+                }
+            },
+        });
+
+        return res.json(games);
     },
 
     async store(req, res) {
