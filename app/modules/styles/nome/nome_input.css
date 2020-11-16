@@ -6,4 +6,5 @@
   font-size: 48px;
   display: flex;
   flex-direction: column;
+  margin-bottom: 1rem;
 }
