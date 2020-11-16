@@ -1,13 +1,18 @@
 
 body{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  font-family: 'MetropolisRegular';
   width: 100%;
-  height: 768px;
+  font-family: 'Metropolis';
+  min-height:(100vh);
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  background: #36357e;
+
 }
 
-.primeira-pagina{
-  background: #4B4FA1;
-}
+// .primeira-pagina{
+//   max-width: 1140px;
+//   margin: 0 auto;
+//
+// }
