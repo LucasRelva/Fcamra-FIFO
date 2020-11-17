@@ -2,10 +2,10 @@
 .conteudo{
 
   width: auto;
-  height: auto;
+  min-height:(100vh);
   display:flex;
   justify-content: center;
-  border:2px solid black;
+  background-color: #4B4FA1;
 
 }
 

@@ -2,7 +2,15 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('match_user', { 
+
+    await queryInterface.createTable('waits', { 
+
+      id: {
+        type: Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+        allowNull: false,
+      },
       game_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -16,12 +24,27 @@ module.exports = {
         references: {model: 'users', key: 'id'},
         onUpdate:  'CASCADE',
         onDelete: 'CASCADE',
-      }
-    });
+      },
+      status: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      created_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+      updated_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+
+     });
+
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('match_user');
+    
+      await queryInterface.dropTable('waits');
      
   }
 };

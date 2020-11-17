@@ -13,6 +13,7 @@ module.exports = {
       is_active: {
         type: Sequelize.BOOLEAN,
         allowNull: false,
+        defaultValue: true,
       },
       unity_id: {
         type: Sequelize.INTEGER,

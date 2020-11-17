@@ -1,40 +1,43 @@
-// @media(min-width:0){
-//   body{
-//     width: auto;
-//     background: red;
-//     height: auto;
-//   }
-//
-//   .selecao{
-//     width: auto;
-//     align-items: center;
-//     display: flex;
-//   }
-//
-//   .selecao_instrucao{
-//     font-size: 1.5rem;
-//
-//
-//   }
-//
-//   .selecao_caixa_botao{
-//     display:flex;
-//     flex-direction: column;
-//     align-items: center;
-//   }
-//
-//
-//   .selecao_logo_grande{
-//     font-size: 10rem;
-//
-//
-//   }
-//
-//
-// @media(min-width: 1140px){
-//
-// }
-//
-//
-//
-// }
+@media(max-width:768px){
+
+  .primeira-pagina{
+    justify-content: center;
+    align-items:center;
+    padding: 0 15px;
+  }
+
+  .selecao_logo_fifo{
+    width:80%;
+  }
+
+  .selecao_logo_slogan{
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .selecao_instrucao{
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 23px;
+  }
+
+
+
+  .selecao_caixa_botao{
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+  }
+
+  .selecao_botao{
+    margin-bottom: 32px;
+    &+&{
+      margin-left: 0;
+    }
+  }
+
+
+
+
+}
