@@ -5,6 +5,33 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box; }
+
+*:focus {
+  outline: 0; }
+
+html, body, #root {
+  height: 100%; }
+
+body {
+  -webkit-font-smoothing: antialiased; }
+
+body, input, button {
+  font: 14px 'Roboto', sans-serif; }
+
+a {
+  text-decoration: none; }
+
+ul {
+  list-style: none; }
+
+button {
+  cursor: pointer; }
+
 html {
   line-height: 1.15;
   /* 1 */
@@ -303,49 +330,80 @@ template {
 [hidden] {
   display: none; }
 
-.selecao_botao {
-  cursor: pointer;
-  width: 330px;
-  height: 140px;
-  border-radius: 20px;
-  border: none;
-  background-color: #FFFFFF; }
-
-.selecao_botao:first-child {
-  margin-right: 5px; }
-
-.selecao_botao a {
-  font-size: 2.2rem;
-  text-decoration: none;
-  color: #303033; }
-
-.selecao_caixa_botao {
-  align-self: center;
-  display: flex;
-  justify-content: space-around;
-  padding-top: 1rem;
-  width: 900px; }
-
-.selecao_instrucao {
-  color: #FFFFFF;
-  font-size: 2.2rem;
-  margin-top: 0;
-  text-align: center; }
-
-.selecao_logo_grande {
-  display: block;
-  color: #FC6027;
-  font-size: 13.5rem;
-  text-align: center;
-  margin-bottom: 0.2rem;
-  margin-top: 1rem; }
-
-.selecao {
+body {
+  width: 100%;
+  font-family: 'MetropolisRegular';
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-content: center;
-  padding-top: 0;
-  height: 600px;
-  width: 100%; }
+  justify-content: center;
+  align-items: center;
+  background: #36357e; }
+
+.selecao_logo_fifo {
+  width: 353px;
+  margin-bottom: 1.5175%; }
+
+.selecao_logo_slogan {
+  font-size: 36px;
+  margin-bottom: 13.9649%;
+  margin-top: 0;
+  color: #ffffff; }
+
+.selecao_botao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 252px;
+  height: 96px;
+  margin: 0;
+  padding: 0 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 26px;
+  font-weight: 500;
+  color: #303033;
+  text-decoration: none;
+  background-color: #ffffff; }
+  .selecao_botao + .selecao_botao {
+    margin-left: 13.9931%; }
+
+.selecao_caixa_botao {
+  display: flex;
+  justify-content: center;
+  width: 51.4035%; }
+
+.selecao_instrucao {
+  font-size: 40px;
+  color: #ffffff;
+  margin-bottom: 32px; }
+
+@media (max-width: 768px) {
+  .primeira-pagina {
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px; }
+
+  .selecao_logo_fifo {
+    width: 80%; }
+
+  .selecao_logo_slogan {
+    font-size: 24px;
+    text-align: center; }
+
+  .selecao_instrucao {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 23px; }
+
+  .selecao_caixa_botao {
+    flex-direction: column;
+    align-items: center;
+    width: 100%; }
+
+  .selecao_botao {
+    margin-bottom: 32px; }
+    .selecao_botao + .selecao_botao {
+      margin-left: 0; } }
 
 /*# sourceMappingURL=estilos-unidade.css.map */

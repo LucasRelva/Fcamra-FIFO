@@ -2,7 +2,6 @@ const express = require('express')
 const UnityController = require('../interceptors/UnityController')
 const GameController = require('../interceptors/GameController')
 const UserController = require('../interceptors/UserController')
-const MatchController = require('../interceptors/MatchController')
 
 const routes = express.Router()
 
@@ -15,7 +14,7 @@ routes.get('/', (req, res) => {
  */
 routes.get('/unities/list', UnityController.list)
 routes.delete('/unities/:unity_id', UnityController.delete)
-routes.post('/unities/create/', UnityController.store)
+routes.post('/unities/create', UnityController.store)
 
 /**
  * Rotas de Game com Unidade
@@ -29,13 +28,6 @@ routes.post('/unities/create/:unity_id/games', GameController.store)
  */
 routes.get('/users/list', UserController.list)
 routes.delete('/users/:user_id', UserController.delete)
-routes.post('/users/create/', UserController.store)
-
-/**
- * Rotas de Partidas/Match
- */
-routes.get('/matchs/list', MatchController.list)
-routes.delete('/matchs/:game_id', MatchController.delete)
-routes.post('/matchs/:game_id/:user_id/create/', MatchController.store)
+routes.post('/users/create', UserController.store)
 
 module.exports = routes
