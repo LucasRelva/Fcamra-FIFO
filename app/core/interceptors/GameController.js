@@ -35,7 +35,7 @@ module.exports = {
                     }
                 }
             },
-            include:{
+            include: {
                 association: 'unities',
                 through: {
                     attributes: ['game_id']
