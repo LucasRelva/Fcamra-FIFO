@@ -1,0 +1,17 @@
+
+body{
+    width: 100%;
+    font-family: 'Metropolis Medium';
+    min-height:(100vh);
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    background: #36357e;
+  
+  }
+
+  @font-face {
+    font-family: 'Metropolis Medium';
+    src: url("../styles/helpers/fonts/Metropolis-Medium.otf")
+}

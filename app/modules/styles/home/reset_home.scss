@@ -1,6 +1,6 @@
 body{
 width: 100%;
-font-family: 'MetropolisRegular';
+font-family: 'Metropolis Medium';
 min-height:(100vh);
 display: flex;
 flex-direction: column;
@@ -8,3 +8,8 @@ align-items: center;
 background-color: #e5e5e5;
 
 }
+@font-face {
+    font-family: 'Metropolis Medium';
+    src: url("../styles/helpers/fonts/Metropolis-Medium.otf")
+}
+

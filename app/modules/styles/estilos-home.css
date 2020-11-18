@@ -17,9 +17,6 @@
 html, body, #root {
   height: 100%; }
 
-body {
-  -webkit-font-smoothing: antialiased; }
-
 body, input, button {
   font: 14px 'Roboto', sans-serif; }
 
@@ -332,13 +329,16 @@ template {
 
 body {
   width: 100%;
-  font-family: 'MetropolisRegular';
+  font-family: 'Metropolis Medium';
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #e5e5e5; }
 
+@font-face {
+  font-family: 'Metropolis Medium';
+  src: url("../styles/helpers/fonts/Metropolis-Medium.otf"); }
 .home_logo_fifo {
   color: red;
   width: 6.9054%; }
@@ -426,5 +426,28 @@ body {
 
 .home_botao_fila:nth-child(2) {
   margin-right: 154px; }
+
+@media (max-height: 768px) {
+  .home_instrucao_pequeno {
+    margin-top: 3%; }
+
+  .home_instrucao_grande {
+    margin-top: 0.5%; }
+
+  .home_jogo_selecao {
+    width: 250px;
+    height: 320px; }
+
+  .home_botao_fila {
+    font-size: 12px;
+    width: 280px;
+    height: 40px;
+    margin-top: 20px; }
+
+  .home_botao_fila:first-child {
+    margin-right: 21.508%; }
+
+  .home_botao_fila:nth-child(2) {
+    margin-right: 21.508%; } }
 
 /*# sourceMappingURL=estilos-home.css.map */
