@@ -5,7 +5,9 @@ module.exports = {
     
     async list(req, res) {
         const users = await User.findAll();
+
         if(!users) res.status(404).json({error:'error',msg: 'users not found!'})
+        
         return res.json(users)
     },
 
