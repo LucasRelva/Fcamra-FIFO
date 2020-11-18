@@ -2,6 +2,7 @@ const express = require('express')
 const userRoutes = require('./user.routes');
 const gameRoutes = require('./game.routes');
 const unityRoutes = require('./unity.routes');
+const waitRoutes = require('./wait.routes');
 
 const routes = express.Router();
 
@@ -12,7 +13,7 @@ routes.get('/', (req, res) => {
 /**
  * Rotas da Unidade
  */
-routes.use('/unities/',unityRoutes)
+routes.use('/unities',unityRoutes)
 
 /**
  * Rotas de Usuário
@@ -22,6 +23,11 @@ routes.use('/users',userRoutes);
 /**
  * Rotas de Usuário
  */
-routes.use('/game',gameRoutes);
+routes.use('/games',gameRoutes);
+
+/**
+ * Rotas de Esperas
+ */
+routes.use('/waits',waitRoutes)
 
 module.exports = routes
