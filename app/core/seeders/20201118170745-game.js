@@ -7,14 +7,14 @@ module.exports = {
         id: 1,
         name: 'Playstation',
         slug: 'playstation',
-        is_active: false,
+        is_active: true,
         created_at: new Date(),
         updated_at: new Date(),
       },{
         id: 2,
         name: 'Bilhar',
         slug: 'bilhar',
-        is_active: false,
+        is_active: true,
         created_at: new Date(),
         updated_at: new Date(),
       },], {});
