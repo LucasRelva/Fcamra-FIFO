@@ -1,38 +1,18 @@
-@media (max-height:768px){
-
-
-
-  .home_instrucao_pequeno{
-      margin-top: 3%;
+@media (max-height: 768px) {
+  .home_instrucao_pequeno {
+    margin-top: 3%;
   }
 
-  .home_instrucao_grande{
-      margin-top: 0.5%;
+  .home_instrucao_grande {
+    margin-top: 0.5%;
   }
 
-  .home_jogo_selecao{
-
+  .home_jogo_selecao {
+    height: 320px;
     width: 250px;
-    height:320px;
-
   }
 
-  .home_botao_fila{
-    font-size: 12px;
-    width: 280px;
-    height: 40px;
+  .home_botao_fila {
     margin-top: 20px;
   }
-
-
-  .home_botao_fila:first-child{
-    margin-right: 21.508%;
-  }
-
-
-  .home_botao_fila:nth-child(2){
-    margin-right: 21.508%;
-  }
-
-
 }

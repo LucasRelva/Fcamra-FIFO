@@ -334,7 +334,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #e5e5e5; }
+  background-color: #e5e5e5;
+  color: #333333; }
 
 @font-face {
   font-family: 'Metropolis Medium';
@@ -344,17 +345,20 @@ body {
   width: 6.9054%; }
 
 .home_nav {
+  align-items: center;
+  align-self: center;
   display: flex;
   height: 6.0441%;
-  margin-top: 30px;
-  align-items: center; }
+  margin-left: 48px;
+  margin-right: 76px;
+  margin-top: 30px; }
 
 .home_nav_link {
-  text-decoration: none;
-  cursor: pointer;
   color: #333333;
+  cursor: pointer;
+  font-size: 24px;
   font-weight: bold;
-  font-size: 24px; }
+  text-decoration: none; }
 
 .home_nav_link:nth-child(2) {
   margin-left: 29.4348%;
@@ -372,33 +376,37 @@ body {
 .home_instrucao_pequeno {
   font-weight: bold;
   text-align: center;
+  font-size: 14px;
   text-transform: uppercase;
   margin-top: 5.9685%;
+  margin-bottom: 0;
   line-height: 1.25;
   text-align: center; }
 
 .home_instrucao_grande {
-  font-size: 48px;
+  font-size: 45px;
   font-weight: bold;
   line-height: 1.25;
-  margin-top: 1.2088%; }
+  margin-top: 1.8%; }
 
 .home_jogo_caixa {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  width: 100%;
-  flex-wrap: wrap; }
+  width: 100%; }
 
 .home_jogo_titulo {
-  text-align: center;
-  margin-top: 24px;
-  font-weight: bold; }
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.25;
+  margin-top: 14px;
+  text-align: center; }
 
 .home_jogo_selecao {
   background-color: #ffffff;
   border-radius: 10px;
-  width: 320px;
-  height: 415px; }
+  height: 398px;
+  width: 320px; }
 
 .home_jogo_selecao:first-child {
   margin-right: 6.7996%; }
@@ -410,26 +418,25 @@ body {
   display: flex; }
 
 .home_botao_fila {
-  display: flex;
+  align-items: center;
   background: #fe885c;
-  color: #ffffff;
-  font-size: 16px;
-  text-transform: uppercase;
-  font-weight: bold;
   border-radius: 8px;
   border: none;
-  width: 256px;
+  color: #ffffff;
+  display: flex;
+  font-size: 16px;
+  font-weight: bold;
   height: 48px;
+  justify-content: center;
   margin-top: 26.7px;
-  margin-right: 0.5%;
-  align-items: center;
-  justify-content: center; }
+  text-transform: uppercase;
+  width: 256px; }
 
 .home_botao_fila:first-child {
-  margin-right: 154px; }
+  margin-right: 195px; }
 
 .home_botao_fila:nth-child(2) {
-  margin-right: 154px; }
+  margin-right: 195px; }
 
 .material-icons {
   margin-left: 17.1px; }
@@ -442,19 +449,10 @@ body {
     margin-top: 0.5%; }
 
   .home_jogo_selecao {
-    width: 250px;
-    height: 320px; }
+    height: 320px;
+    width: 250px; }
 
   .home_botao_fila {
-    font-size: 12px;
-    width: 280px;
-    height: 40px;
-    margin-top: 20px; }
-
-  .home_botao_fila:first-child {
-    margin-right: 21.508%; }
-
-  .home_botao_fila:nth-child(2) {
-    margin-right: 21.508%; } }
+    margin-top: 20px; } }
 
 /*# sourceMappingURL=estilos-home.css.map */

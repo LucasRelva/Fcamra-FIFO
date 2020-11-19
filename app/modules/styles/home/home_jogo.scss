@@ -1,15 +1,18 @@
 .home_jogo_caixa{
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  flex-wrap: wrap;
+  
 
 }
 
 .home_jogo_titulo{
-  text-align: center;
-  margin-top: 24px;
+  font-size: 24px;
   font-weight: bold;
+  line-height: 1.25;
+  margin-top: 14px;
+  text-align: center;
 
 }
 
@@ -18,8 +21,8 @@
 .home_jogo_selecao{
   background-color: #ffffff;
   border-radius: 10px;
+  height:398px;
   width: 320px;
-  height:415px;
 
 }
 
