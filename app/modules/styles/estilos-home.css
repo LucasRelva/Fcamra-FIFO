@@ -438,6 +438,9 @@ body {
 .home_botao_fila:nth-child(2) {
   margin-right: 195px; }
 
+.home_botao_fila:hover {
+  background-color: #fe4400; }
+
 .material-icons {
   margin-left: 17.1px; }
 
