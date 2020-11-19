@@ -1,4 +1,10 @@
+.home_botao_caixa{
+  display: flex;
+
+}
+
 .home_botao_fila{
+  display: flex;
   background: #fe885c;
   color: #ffffff;
   font-size: 16px;
@@ -6,9 +12,13 @@
   font-weight: bold;
   border-radius: 8px;
   border:none;
-  width: 296px;
+  width: 256px;
   height: 48px;
   margin-top: 26.7px;
+  margin-right: 0.5%;
+  align-items: center;
+  justify-content: center;
+  
 }
 
 .home_botao_fila:first-child{
@@ -19,3 +29,9 @@
 .home_botao_fila:nth-child(2){
   margin-right: 154px;
 }
+
+
+.material-icons{
+  margin-left: 17.1px;
+}
+

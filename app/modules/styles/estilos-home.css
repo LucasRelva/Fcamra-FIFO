@@ -389,6 +389,11 @@ body {
   width: 100%;
   flex-wrap: wrap; }
 
+.home_jogo_titulo {
+  text-align: center;
+  margin-top: 24px;
+  font-weight: bold; }
+
 .home_jogo_selecao {
   background-color: #ffffff;
   border-radius: 10px;
@@ -401,15 +406,11 @@ body {
 .home_jogo_selecao:nth-child(2) {
   margin-right: 6.7996%; }
 
-.home_jogo_titulo {
-  text-align: center;
-  margin-top: 24px;
-  font-weight: bold; }
-
 .home_botao_caixa {
   display: flex; }
 
 .home_botao_fila {
+  display: flex;
   background: #fe885c;
   color: #ffffff;
   font-size: 16px;
@@ -417,15 +418,21 @@ body {
   font-weight: bold;
   border-radius: 8px;
   border: none;
-  width: 296px;
+  width: 256px;
   height: 48px;
-  margin-top: 26.7px; }
+  margin-top: 26.7px;
+  margin-right: 0.5%;
+  align-items: center;
+  justify-content: center; }
 
 .home_botao_fila:first-child {
   margin-right: 154px; }
 
 .home_botao_fila:nth-child(2) {
   margin-right: 154px; }
+
+.material-icons {
+  margin-left: 17.1px; }
 
 @media (max-height: 768px) {
   .home_instrucao_pequeno {

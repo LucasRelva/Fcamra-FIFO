@@ -1,3 +1,20 @@
+.home_jogo_caixa{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+
+}
+
+.home_jogo_titulo{
+  text-align: center;
+  margin-top: 24px;
+  font-weight: bold;
+
+}
+
+
+
 .home_jogo_selecao{
   background-color: #ffffff;
   border-radius: 10px;
@@ -13,3 +30,4 @@
 .home_jogo_selecao:nth-child(2){
   margin-right: 6.7996%;
 }
+
