@@ -341,14 +341,8 @@ body {
   font-family: 'Metropolis Medium';
   src: url("../styles/helpers/fonts/Metropolis-Medium.otf"); }
 .selecao_logo_fifo {
-  width: 353px;
-  margin-bottom: 1.5175%; }
-
-.selecao_logo_slogan {
-  font-size: 36px;
-  margin-bottom: 13.9649%;
-  margin-top: 0;
-  color: #ffffff; }
+  width: 420px;
+  margin-bottom: 7.8070%; }
 
 .selecao_botao {
   display: flex;
