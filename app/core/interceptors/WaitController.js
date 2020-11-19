@@ -1,7 +1,6 @@
 const Wait = require('../models/Wait')
 const User = require('../models/User')
 const Game = require('../models/Game')
-const { update, findAll } = require('../models/Wait')
 
 module.exports = {
 
@@ -49,21 +48,28 @@ module.exports = {
         const { game_id, user_id, status } = req.params
 
         const user = await User.findByPk(user_id)
-        const game = await game.findByPk(game_id)
+        const game = await Game.findByPk(game_id)
 
-        if (!user) res.status(400).json({ error: 'User not found!' })
+        if (!user || !game) res.status(400).json({ error: 'User or Game was not found!' })
 
-        const wait = await findAll({
+        const wait = await Wait.update({status: status}, {
             where: {
-                user_id
+                user_id,
+                game_id
             }
         })
 
-        await wait.update({ status: status })
-
-        if(wait.status == 2) {
-            await user.removeWait(wait)
-            await game.removeWait(wait)
+        if (wait > 0 && status == 2) {
+            await user.setWaits([])
+            await game.setWaits([])
         }
+
+       await Wait.destroy({
+            where: {
+                status: 2
+            }
+        })
+
+        return res.json(wait)
     }
 }
