@@ -34,6 +34,7 @@ module.exports = {
             attributes: ['status', 'id'],
             where: {
                 game_id
+                // TODO colocar status diferente de 2
             },
             include: [
                 { association: 'user', attributes: ['id', 'email'] },
@@ -45,28 +46,15 @@ module.exports = {
     },
 
     async updateStatus(req, res) {
-        const { game_id, user_id, status } = req.params
+        const { wait_id, status } = req.params
 
-        const user = await User.findByPk(user_id)
-        const game = await Game.findByPk(game_id)
+        const wait = await Wait.findByPk(wait_id)
 
         if (!user || !game) res.status(400).json({ error: 'User or Game was not found!' })
 
-        const wait = await Wait.update({status: status}, {
+       await Wait.update({status: status}, {
             where: {
-                user_id,
-                game_id
-            }
-        })
-
-        if (wait > 0 && status == 2) {
-            await user.setWaits([])
-            await game.setWaits([])
-        }
-
-       await Wait.destroy({
-            where: {
-                status: 2
+              id: wait_id
             }
         })
 
