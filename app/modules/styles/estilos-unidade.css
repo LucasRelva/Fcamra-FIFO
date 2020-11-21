@@ -17,9 +17,6 @@
 html, body, #root {
   height: 100%; }
 
-body {
-  -webkit-font-smoothing: antialiased; }
-
 body, input, button {
   font: 14px 'Roboto', sans-serif; }
 
@@ -332,7 +329,7 @@ template {
 
 body {
   width: 100%;
-  font-family: 'MetropolisRegular';
+  font-family: 'Metropolis Medium';
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -340,15 +337,12 @@ body {
   align-items: center;
   background: #36357e; }
 
+@font-face {
+  font-family: 'Metropolis Medium';
+  src: url("../styles/helpers/fonts/Metropolis-Medium.otf"); }
 .selecao_logo_fifo {
-  width: 353px;
-  margin-bottom: 1.5175%; }
-
-.selecao_logo_slogan {
-  font-size: 36px;
-  margin-bottom: 13.9649%;
-  margin-top: 0;
-  color: #ffffff; }
+  width: 420px;
+  margin-bottom: 7.8070%; }
 
 .selecao_botao {
   display: flex;
