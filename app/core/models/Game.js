@@ -6,6 +6,9 @@ class Game extends Model{
             name: DataTypes.STRING,
             slug: DataTypes.STRING,
             is_active: DataTypes.BOOLEAN,
+            total_waits: {
+                type: DataTypes.VIRTUAL,
+            },
         }, {
             sequelize,
             tableName: 'games',

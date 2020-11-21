@@ -26,15 +26,14 @@ module.exports = {
 
         });
 
-        const totalWaits = []
 
-        for(let i = 0; i < games.length; i++){ // TODO Testar se deu certo
+        for(let i = 0; i < games.length; i++){ 
 
-           totalWaits[i] = games[i].countWaits()
+           games[i].total_waits = await games[i].countWaits()
 
         }
 
-        return res.json({ games, totalWaits });
+        return res.json( games );
     },
 
     async store(req, res) {
