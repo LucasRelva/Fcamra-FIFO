@@ -1,6 +1,7 @@
 const Wait = require('../models/Wait')
 const User = require('../models/User')
 const Game = require('../models/Game')
+const { Op } = require('sequelize')
 
 module.exports = {
 
@@ -34,7 +35,8 @@ module.exports = {
             attributes: ['status', 'id'],
         
             where: {
-                game_id  // TODO colocar status diferente de 2 ou somente os que forem 0, e crriar um match controller q vai retornar os que foram stautus 1
+                game_id, 
+                status: {[Op.notIn]: [2]}
             },
             include: [
                 { association: 'user', attributes: ['id', 'email'] },
@@ -50,7 +52,7 @@ module.exports = {
 
         const wait = await Wait.findByPk(wait_id)
 
-        if (!user || !game) res.status(400).json({ error: 'User or Game was not found!' })
+        if (!wait) res.status(400).json({ error: 'Wait not found!' })
 
        await Wait.update({status: status}, {
             where: {
