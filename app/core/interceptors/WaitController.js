@@ -32,9 +32,13 @@ module.exports = {
 
         const waits = await Wait.findAll({
             attributes: ['status', 'id'],
+            // TODO colocar status diferente de 2 ou somente os que forem 0, e crriar um match controller q vai retornar os que foram stautus 1
+            // TODO colocar status diferente de 2 ou somente os que forem 0, e crriar um match controller q vai retornar os que foram stautus 1
+            // TODO colocar status diferente de 2 ou somente os que forem 0, e crriar um match controller q vai retornar os que foram stautus 1
+            // TODO colocar status diferente de 2 ou somente os que forem 0, e crriar um match controller q vai retornar os que foram stautus 1
+            // TODO colocar status diferente de 2 ou somente os que forem 0, e crriar um match controller q vai retornar os que foram stautus 1
             where: {
                 game_id
-                // TODO colocar status diferente de 2 ou somente os que forem 0, e crriar um match controller q vai retornar os que foram stautus 1
             },
             include: [
                 { association: 'user', attributes: ['id', 'email'] },
