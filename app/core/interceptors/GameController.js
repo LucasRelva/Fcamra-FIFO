@@ -1,84 +1,167 @@
-const Game = require('../models/Game');
-const Unity = require('../models/Unity');
-const Wait = require('../models/Wait');
-const slugify = require('slugify');
-const { Sequelize, Op } = require('sequelize');
+const Game = require("../models/Game");
+const Unity = require("../models/Unity");
+const Wait = require("../models/Wait");
+const slugify = require("slugify");
+const { Sequelize, Op } = require("sequelize");
 
 module.exports = {
-    async list(req, res) {
-        const { unity_id } = req.params
-
-        const games = await Game.findAll({
-
-            attributes: ['name', 'slug', 'id'],
-
-            include: [
-                {
-                    association: 'unities',
+  async read(req, res) {
+    const { game_id, unity_id } = req.params;
+    try {
+      const game = await Game.findAll({
+        where: {
+          id: game_id,
+        },
+        include: "unities",
+      });
+      let next,
+        prev;
+      if (game) {
+        next = await Game.findAll({
+          where: {
+            id: {
+              [Op.gt]: game_id,
+            },
+          },
+          include: [
+            {
+              association: "unities",
+              through: {
+                attributes: ["game_id"],
+              },
+              where: {
+                id: unity_id,
+              },
+            },
+          ],
+          limit: 1,
+        });
+        if(!next || next.length ===0){
+            next = await Game.findOne({
+                include: [
+                  {
+                    association: "unities",
                     through: {
-                        attributes: ['game_id']
+                      attributes: ["game_id"],
                     },
                     where: {
-                        id: unity_id
-                    }
-                }
-            ],
-
+                      id: unity_id,
+                    },
+                  },
+                ]
+            });
+        }
+        prev = await Game.findAll({
+          where: {
+            id: {
+              [Op.lt]: game_id,
+            },
+          },
+          include: [
+            {
+              association: "unities",
+              through: {
+                attributes: ["game_id"],
+              },
+              where: {
+                id: unity_id,
+              },
+            },
+          ],
+          limit: 1,
+          order: [[ 'id' , 'DESC']]
         });
-
-
-        for(let i = 0; i < games.length; i++){ 
-
-           games[i].total_waits = await games[i].countWaits()
-
+        if(!prev){
+            prev = await Game.findOne({
+                include: [
+                  {
+                    association: "unities",
+                    through: {
+                      attributes: ["game_id"],
+                    },
+                    where: {
+                      id: unity_id,
+                    },
+                  },
+                ],
+                order: [[ 'id' , 'DESC']],
+            });
         }
+      }
+      return res.json({ infos: game, prev, next });
+    } catch (error) {
+      return res.status(500).json({ error });
+    }
+  },
 
-        return res.json( games );
-    },
+  async list(req, res) {
+    const { unity_id } = req.params;
 
-    async store(req, res) {
-        const { unity_id } = req.params
-        const { name, is_active } = req.body
+    const games = await Game.findAll({
+      attributes: ["name", "slug", "id"],
+      include: [
+        {
+          association: "unities",
+          through: {
+            attributes: ["game_id"],
+          },
+          where: {
+            id: unity_id,
+          },
+        },
+      ],
+    });
 
-        const unity = await Unity.findByPk(unity_id)
+    for (let i = 0; i < games.length; i++) {
+      games[i].total_waits = await games[i].countWaits();
+    }
 
-        if (!unity) return res.status(400).json({ error: 'Unity not found' })
+    return res.json(games);
+  },
 
-        const slug = slugify(name).toLowerCase()
+  async store(req, res) {
+    const { unity_id } = req.params;
+    const { name, is_active } = req.body;
 
-        const [game, created] = await Game.findOrCreate({
-            where: {
-                name: name,
-                slug: slug,
-                is_active: is_active
-            }
-        })
+    const unity = await Unity.findByPk(unity_id);
 
-        if (!created) {
-            game.update({ is_active: true })
-        }
+    if (!unity) return res.status(400).json({ error: "Unity not found" });
 
-        await unity.addGame(game)
+    const slug = slugify(name).toLowerCase();
 
-        return res.json(game)
-    },
+    const [game, created] = await Game.findOrCreate({
+      where: {
+        name: name,
+        slug: slug,
+        is_active: is_active,
+      },
+    });
 
-    async delete(req, res) {
-        const { unity_id } = req.params
-        const { name } = req.body
+    if (!created) {
+      game.update({ is_active: true });
+    }
 
-        const unity = await Unity.findByPk(unity_id)
+    await unity.addGame(game);
 
-        if (!unity) return res.status(400).json({ error: 'Unity not found' })
+    return res.json(game);
+  },
 
-        const game = await Game.findOne({
-            where: {
-                name: name
-            }
-        })
+  async delete(req, res) {
+    const { unity_id } = req.params;
+    const { name } = req.body;
 
-        await unity.removeGame(game)
+    const unity = await Unity.findByPk(unity_id);
 
-        return res.json(game)
-    },
-}
+    if (!unity) return res.status(400).json({ error: "Unity not found" });
+
+    const game = await Game.findOne({
+      where: {
+        name: name,
+      },
+    });
+
+    await unity.removeGame(game);
+
+    return res.json(game);
+  },
+};
