@@ -30,4 +30,9 @@ routes.use('/games',gameRoutes);
  */
 routes.use('/waits',waitRoutes)
 
+/**
+ * Rotas de Match
+ */
+routes.use('/match',waitRoutes)
+
 module.exports = routes
