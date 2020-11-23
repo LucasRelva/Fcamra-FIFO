@@ -2,21 +2,24 @@ const Wait = require('../models/Wait')
 const User = require('../models/User')
 const Game = require('../models/Game')
 const { Op } = require('sequelize')
+const Unity = require('../models/Unity')
 
 module.exports = {
 
     async store(req, res) {
-        const { game_id, user_id } = req.params
+        const { game_id, user_id, unity_id } = req.params
 
         const game = await Game.findByPk(game_id)
         const user = await User.findByPk(user_id)
+        const unity = await Unity.findByPk(unity_id)
 
-        if (!user || !game) res.status(400).json({ error: 'User or Game was not found!' })
+        if (!user || !game || !unity) res.status(400).json({ error: 'User, Game or Unity was not found!' })
 
         const [wait] = await Wait.findOrCreate({
             where: {
                 game_id,
                 user_id,
+                unity_id,
                 status: 0
             }
         })
@@ -25,7 +28,7 @@ module.exports = {
     },
 
     async list(req, res) {
-        const { game_id } = req.params
+        const { game_id, unity_id } = req.params
 
         const game = await Game.findByPk(game_id)
 
@@ -35,12 +38,14 @@ module.exports = {
             attributes: ['status', 'id'],
         
             where: {
-                game_id, 
+                game_id,
+                unity_id, 
                 status: {[Op.notIn]: [2]}
             },
             include: [
                 { association: 'user', attributes: ['id', 'email'] },
-                { association: 'game', attributes: ['id'] }
+                // { association: 'game', attributes: ['id'] },
+                // { association: 'unity', attributes: ['slug'] }
             ]
         })
 

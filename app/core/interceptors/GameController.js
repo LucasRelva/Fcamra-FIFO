@@ -152,7 +152,7 @@ module.exports = {
 
   async delete(req, res) {
     const { unity_id } = req.params;
-    const { name } = req.body;
+    const { slug } = req.body;
 
     const unity = await Unity.findByPk(unity_id);
 
@@ -160,7 +160,7 @@ module.exports = {
 
     const game = await Game.findOne({
       where: {
-        name: name,
+        slug,
       },
     });
 
