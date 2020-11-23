@@ -38,7 +38,7 @@ FIFO funciona com várias tecnologias supermaneiras!
 - [x] pegar jogo | GET /games/:unity_id/:game_id
 - [x] listar espera (usuários que estão esperando a para jogar) | GET /waits/:game_id
 - [x] entrar na fila | POST /waits/:game_id/:user_id 
-- [ ] iniciar partida | POST /waits/:game_id/:user_id 
+- [x] iniciar partida | POST /match/:wait_id
 - [x] sair da fila/concluir  | PUT /waits/:wait_id/:status (padrão de sair/concluir = 2)
 - [x] game anterio  | GET /game/:game_id \
 - [x] próximo game  | GET /game/:game_id / deixar junto?
