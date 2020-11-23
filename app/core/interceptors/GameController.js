@@ -25,6 +25,7 @@ module.exports = {
           },
           include: [
             {
+              attributes: [],
               association: "unities",
               through: {
                 attributes: ["game_id"],
@@ -40,6 +41,7 @@ module.exports = {
             next = await Game.findOne({
                 include: [
                   {
+                    attributes: [],
                     association: "unities",
                     through: {
                       attributes: ["game_id"],
@@ -59,6 +61,7 @@ module.exports = {
           },
           include: [
             {
+              attributes: [],
               association: "unities",
               through: {
                 attributes: ["game_id"],
@@ -75,6 +78,7 @@ module.exports = {
             prev = await Game.findOne({
                 include: [
                   {
+                    attributes: [],
                     association: "unities",
                     through: {
                       attributes: ["game_id"],
@@ -90,7 +94,7 @@ module.exports = {
       }
       return res.json({ infos: game, prev, next });
     } catch (error) {
-      return res.status(500).json({ error });
+      return res.json({ error });
     }
   },
 
