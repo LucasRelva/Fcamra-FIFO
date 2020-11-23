@@ -3,6 +3,7 @@ const User = require('../models/User')
 const Game = require('../models/Game')
 const { Op } = require('sequelize')
 const Unity = require('../models/Unity')
+const Match = require('../models/Match')
 
 module.exports = {
 
@@ -63,7 +64,22 @@ module.exports = {
             where: {
               id: wait_id
             }
-        })
+        });
+
+        if(status===2){
+            const matchs = await wait.getMatches({
+                where: {
+                    completed: false
+                }
+            });
+            if(matchs){
+                matchs.map(match => {
+                    match.update({
+                        completed:true
+                    })
+                });
+            }
+        }
 
         return res.json(wait)
     }

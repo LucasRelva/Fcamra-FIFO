@@ -7,18 +7,16 @@ module.exports = {
     const { wait_id } = req.params;
     try {
         const matchs = await Match.findAll({
-        include: [
-            {
-            association: "waits",
-            through: {
-                attributes: ["match_id"],
-            },
-            where: {
-                id: wait_id,
-                status: 1
-            },
-            },
-        ],
+            include: [{
+                association: "waits",
+                through: {
+                    attributes: ["match_id"],
+                },
+                where: {
+                    id: wait_id,
+                    status: 1
+                },
+            }],
         });
         return res.json(matchs);
     } catch (error) {
@@ -39,6 +37,9 @@ module.exports = {
         });
         if (match) {
             await wait.addMatch(match);
+            wait.update({
+                status: 1
+            })
         }
         return res.json(match);   
     } catch (error) {
