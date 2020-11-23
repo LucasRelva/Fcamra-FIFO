@@ -15,10 +15,7 @@
   outline: 0; }
 
 html, body, #root {
-  height: 100%; }
-
-body {
-  -webkit-font-smoothing: antialiased; }
+  min-height: 100%; }
 
 body, input, button {
   font: 14px 'Roboto', sans-serif; }
@@ -332,29 +329,58 @@ template {
 
 body {
   width: 100%;
-  font-family: 'MetropolisRegular';
+  font-family: 'Metropolis Medium';
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: baseline;
   align-items: center;
-  background-color: #e5e5e5; }
+  align-content: center;
+  background-color: #e5e5e5;
+  color: #333333; }
 
+@font-face {
+  font-family: 'Metropolis';
+  src: url("../styles/helpers/fonts/Metropolis-Regular.otf"); }
+@font-face {
+  font-family: 'Metropolis Light';
+  src: url("../styles/helpers/fonts/Metropolis-Light.otf"); }
+@font-face {
+  font-family: 'Metropolis Medium';
+  src: url("../styles/helpers/fonts/Metropolis-Medium.otf"); }
+@font-face {
+  font-family: 'Metropolis Bold';
+  src: url("../styles/helpers/fonts/Metropolis-Bold.otf"); }
+@font-face {
+  font-family: 'Metropolis ExtraBold';
+  src: url("../styles/helpers/fonts/Metropolis-ExtraBold.otf"); }
 .home_logo_fifo {
   color: red;
   width: 6.9054%; }
 
 .home_nav {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   height: 6.0441%;
-  margin-top: 30px;
-  align-items: center; }
+  margin-left: 48px;
+  margin-right: 76px;
+  margin-top: 30px; }
+
+.home_nav_container_links {
+  display: flex; }
+  .home_nav_container_links li + li {
+    margin-left: 60px; }
+
+.home_nav_botao {
+  display: none; }
 
 .home_nav_link {
-  text-decoration: none;
-  cursor: pointer;
   color: #333333;
+  cursor: pointer;
+  font-size: 24px;
   font-weight: bold;
-  font-size: 24px; }
+  text-decoration: none; }
 
 .home_nav_link:nth-child(2) {
   margin-left: 29.4348%;
@@ -369,62 +395,334 @@ body {
 .home_nav_link:hover {
   color: #fe4400; }
 
-.home_instrucao_pequeno {
+.jm-navegacao {
+  display: none; }
+
+.j-instrucao_pequeno {
   font-weight: bold;
   text-align: center;
+  font-family: 'Metropolis Medium';
+  font-size: 0.88rem;
   text-transform: uppercase;
-  margin-top: 5.9685%;
-  line-height: 1.25;
+  margin-top: 6.6666%;
+  margin-bottom: 0;
+  line-height: normal;
   text-align: center; }
 
-.home_instrucao_grande {
-  font-size: 48px;
+.j-instrucao_grande {
+  font-size: 2.81rem;
+  font-family: 'Metropolis Bold';
   font-weight: bold;
-  line-height: 1.25;
-  margin-top: 1.2088%; }
+  line-height: normal;
+  margin-top: 1.4035%;
+  margin-bottom: 3.6842%; }
 
 .home_jogo_caixa {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  width: 100%;
-  flex-wrap: wrap; }
+  width: 100%; }
+
+.home_jogo_titulo {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.25;
+  margin-top: 14px;
+  text-align: center; }
 
 .home_jogo_selecao {
   background-color: #ffffff;
   border-radius: 10px;
-  width: 320px;
-  height: 415px; }
-
-.home_jogo_selecao:first-child {
-  margin-right: 6.7996%; }
+  height: 398px;
+  width: 320px; }
 
 .home_jogo_selecao:nth-child(2) {
-  margin-right: 6.7996%; }
+  margin-right: 90px; }
 
-.home_jogo_titulo {
-  text-align: center;
-  margin-top: 24px;
-  font-weight: bold; }
+.home_jogo_selecao:nth-child(3) {
+  margin-right: 90px; }
+
+.j-carrossel {
+  position: relative;
+  height: 500px;
+  max-width: 997px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: center; }
+
+.j-carrossel__slides {
+  display: flex;
+  width: 100%; }
+
+.j-area-items {
+  display: block;
+  padding: 0 8%; }
+
+.j-carrossel__slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 380px;
+  padding: 14px 15.625% 10px;
+  margin-bottom: 24px;
+  border-radius: 10px;
+  background-color: #FFF; }
+
+.j-carrossel__slide {
+  margin-right: 8px; }
+
+.j-carrossel__titulo {
+  margin-bottom: 20px; }
+
+.j-carrossel__img {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding-bottom: 87.5%;
+  border-radius: 10px;
+  overflow: hidden; }
+
+.j-carrossel__img__img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: contain; }
+
+.j-carrossel__caixa-botao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; }
 
 .home_botao_caixa {
   display: flex; }
 
-.home_botao_fila {
+.j-carrossel__botao {
+  align-items: center;
   background: #fe885c;
-  color: #ffffff;
-  font-size: 16px;
-  text-transform: uppercase;
-  font-weight: bold;
   border-radius: 8px;
   border: none;
-  width: 296px;
+  color: #ffffff;
+  display: flex;
+  font-size: 16px;
+  font-weight: bold;
   height: 48px;
-  margin-top: 26.7px; }
+  width: 80%;
+  justify-content: center;
+  margin-top: 1.25%;
+  text-transform: uppercase; }
 
-.home_botao_fila:first-child {
-  margin-right: 154px; }
+/*
+.j-carrossel__botao:first-child {
+  margin-right: 154px;
+  margin-left: 63.7px;
+}
 
-.home_botao_fila:nth-child(2) {
-  margin-right: 154px; }
+.j-carrossel__botao:nth-child(2) {
+  margin-right: 154px;
+}
+
+.j-carrossel__botao:nth-child(3) {
+  margin-right: 55.9px;
+}
+*/
+.j-carrossel__botao:hover {
+  background-color: #fe4400; }
+
+.j-carrossel__seta-voltar,
+.j-carrossel__seta-avancar {
+  color: #cccccc;
+  position: absolute;
+  top: 39.4734%;
+  transform: translateY(-50%);
+  z-index: 999; }
+
+.j-carrossel__seta-voltar {
+  color: #cccccc;
+  left: -2%;
+  font-size: 50px;
+  margin-left: 0; }
+
+.j-carrossel__seta-voltar:hover {
+  color: #333333; }
+
+.j-carrossel__seta-avancar {
+  font-size: 50px;
+  right: -3%;
+  margin-left: 2.0964%; }
+
+.j-carrossel__seta-avancar:hover {
+  color: #333333; }
+
+.j-carrossel__seta {
+  margin-left: 17.1px; }
+
+.j-area-items {
+  margin-bottom: 8.4210%; }
+
+@media (max-height: 768px) {
+  .j-instrucao_pequeno {
+    margin-top: 3%; }
+
+  .j-instrucao_grande {
+    margin-top: 0.5%; }
+
+  .home_jogo_selecao {
+    height: 320px;
+    width: 250px; }
+
+  .home_botao_fila {
+    margin-top: 20px; } }
+@media (min-width: 0) and (max-width: 768px) {
+  .home_nav {
+    width: 100%;
+    height: 100%;
+    padding: 69px 40.2px 56.9px 0;
+    margin: 0;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    left: 100%;
+    transition: all linear .25s; }
+
+  .home_nav.visible {
+    left: 0%; }
+
+  .home_logo_fifo {
+    width: 78.57px;
+    order: 4;
+    margin-top: auto; }
+
+  .home_nav_container_links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; }
+    .home_nav_container_links li {
+      margin-bottom: 63px; }
+      .home_nav_container_links li + li {
+        margin-left: 0px; }
+
+  .home_nav_link {
+    margin-right: 0 !important;
+    margin-bottom: 63px; }
+
+  .home_nav_pessoa {
+    display: none; }
+
+  .home_nav_botao {
+    display: block;
+    border-radius: 8px;
+    background-color: #FE885C;
+    width: 48px;
+    height: 48px;
+    border: 0;
+    margin-bottom: 43px; }
+
+  .home_nav_icone {
+    color: #fff; }
+
+  .jm-navegacao {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 24px 0; }
+
+  .jm-navegacao__logo {
+    width: 62px; }
+
+  .jm-navegacao__usuario {
+    color: #36357e;
+    font-family: 'Metropolis Bold';
+    font-size: 16px;
+    text-align: left;
+    line-height: 1.1; }
+
+  .j-instrucao_pequeno {
+    font-size: 14px;
+    margin-top: 28px;
+    line-height: normal; }
+
+  .j-instrucao_grande {
+    font-size: 34px;
+    margin-bottom: 20px;
+    line-height: 1.25; }
+
+  .j-carrossel__slide {
+    height: 396px;
+    margin-bottom: 0; }
+
+  .j-carrossel__botao {
+    margin-top: 0;
+    width: 100%; }
+
+  body {
+    position: relative; } }
+@media (min-width: 768px) and (max-width: 1024px) {
+  .home_nav {
+    display: none; }
+
+  .jm-navegacao {
+    width: auto;
+    display: flex;
+    align-items: center;
+    align-content: center; }
+
+  .jm-navegacao__logo {
+    width: 93.3px;
+    margin-right: 241.3px;
+    margin-left: 31.2px;
+    margin-top: 21.4px; }
+
+  .jm-navegacao__usuario {
+    color: #36357e;
+    font-family: 'Metropolis Bold';
+    font-size: 22px;
+    margin-right: 234px;
+    margin-top: 41px;
+    text-align: left;
+    line-height: 1.1; }
+
+  .jm-navegacao__icone-menu {
+    font-size: 40px;
+    margin-right: 17.9px;
+    margin-top: 42px; }
+
+  .j-instrucao_pequeno {
+    color: #333333;
+    font-size: 14px;
+    margin-top: 113px;
+    line-height: normal; }
+
+  .j-instrucao_grande {
+    font-size: 45px;
+    margin-bottom: 20px;
+    line-height: 1.25; }
+
+  .j-area-items {
+    padding: 0 16%; }
+
+  .j-carrossel__slide {
+    height: 398px;
+    margin-bottom: 24px; }
+
+  .j-carrossel__botao {
+    width: 280px;
+    margin-top: 0; }
+
+  .slick-list {
+    margin-bottom: 113px; } }
 
 /*# sourceMappingURL=estilos-home.css.map */

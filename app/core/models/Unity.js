@@ -14,6 +14,7 @@ class Unity extends Model{
 
     static associate(models) {
         this.belongsToMany(models.Game, { foreignKey: 'unity_id', through: 'unity_games', as: 'games' })
+        this.hasMany(models.Wait, { foreignKey: 'unity_id', as: 'waits' })
     }
 }
 

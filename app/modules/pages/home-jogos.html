@@ -1,46 +1,136 @@
 <!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
+
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home Fifo - Selecione o seu jogo</title>
-  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/metropolis" type="text/css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <link rel="stylesheet" href="../styles/estilos-home.css">
 </head>
+
 <body>
 
+
+  <!-- Navegação Desktop  -->
   <div class="home_nav">
+    <button class="home_nav_botao click-event" type="button" name="button">
+      <span class="material-icons home_nav_icone"> arrow_back</span></button>
+    <img class="home_logo_fifo" src="../styles/imagens/fifo_logo_bgclaro.png" alt="">
+    <ul class="home_nav_container_links">
+      <li><a class="home_nav_link" href="#">jogos</a></li>
+      <li><a class="home_nav_link" href="#">filas</a></li>
+      <li><a class="home_nav_link" href="#">ajuda</a></li>
+    </ul>
+    <h2 class="home_nav_pessoa">Oi, Pessoa</h2>
 
+  </div> <!-- Fim navegação desktop-->
 
-    <img class="home_logo_fifo"src="../styles/imagens/fifo_logo_bgclaro.png" alt="">
-
-    <a class="home_nav_link" href="#">jogos</a>
-    <a class="home_nav_link" href="#">minhas filas</a>
-    <a class="home_nav_link" href="#">ajuda</a>
-    <h2>Oi, Pessoa</h2>
-
+  <!-- Navegação Mobile <=767px -->
+  <div class="jm-navegacao j-navegacao">
+    <img class="jm-navegacao__logo" src="../styles/imagens/fifo_logo_bgclaro.png" alt="">
+    <h2 class="jm-navegacao__usuario">oi, pessoa</h2>
+    <span class="material-icons jm-navegacao__icone-menu click-event">menu</span>
   </div>
 
-  <h4 class="home_instrucao_pequeno">escolha o seu jogo</h4>
-  <h1 class="home_instrucao_grande">Eu quero...</h1>
+  <!-- Fim Navegação Mobile <=767px -->
 
-  <div class="home_jogo_caixa">
-    <div class="home_jogo_selecao">
-      <h2 class="home_jogo_titulo">Playstation Fifo</h2>
-    </div>
-    <div class="home_jogo_selecao">
-      <h2 class="home_jogo_titulo">Playstation Zelda</h2>
-    </div>
-    <div class="home_jogo_selecao">
-      <h2 class="home_jogo_titulo">Sinuca</h2>
-    </div>
 
-  </div>
-  <div class="home_botao_caixa">
-    <button class="home_botao_fila"type="button" name="button_entrar">entrar na fila</button>
-    <button class="home_botao_fila"type="button" name="button_entrar">entrar na fila</button>
-    <button class="home_botao_fila"type="button" name="button_entrar">entrar na fila</button>
-  </div>
+  <h4 class="j-instrucao_pequeno">escolha o seu jogo</h4>
+  <h1 class="j-instrucao_grande">Eu quero...</h1>
 
+  <article class="j-carrossel">
+    <div class="j-carrossel__slides js-carrossel">
+
+    </div>
+  </article>
+
+  <div class="j-carrossel__pontos"></div>
 
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous"></script>
+
+<script>
+  // window.addEventListener('load',function(){
+  let carrossel = '';
+  for (let index = 0; index < 10; index++) {
+    carrossel += `
+  <div>
+  <div class="j-area-items">
+  <article class="j-carrossel__slide">
+  <h2 class="j-carrossel__titulo">Teste ${index+1}</h2>
+  <div class="j-carrossel__img"><img src="../styles/imagens/fifo_logo_bgclaro.png" class="j-carrossel__img__img" />
+  </article>
+  <div class="j-carrossel__caixa-botao">
+  <button class="j-carrossel__botao" type="button" name="button_entrar">
+  entrar na fila
+  <span class="material-icons j-carrossel__seta" >east</span>
+  </button>
+  </div>
+  </div>
+  </div>
+  `
+
+  }
+
+  var $carrosselTeste = document.querySelector(".js-carrossel");
+  $carrosselTeste.innerHTML = carrossel;
+  $('.js-carrossel').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    dots: true,
+    infinite: true,
+    responsive: [{
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: false
+        }
+      }
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ],
+    prevArrow: '<span class="material-icons j-carrossel__seta-voltar">arrow_back_ios</span>',
+    nextArrow: '<span class="material-icons j-carrossel__seta-avancar">arrow_forward_ios</span>',
+  });
+
+// menu hamburgao
+  const button = document.querySelectorAll('.click-event');
+  button.forEach(function(btn){
+    return btn.addEventListener('click', function(){
+    document.querySelector('.home_nav').classList.toggle("visible");
+  })});
+  // function toggleMenu(){
+  // document.querySelector('.home_nav').classList.toggle("visible");
+  // }
+
+
+
+
+
+
+</script>
+
 </html>

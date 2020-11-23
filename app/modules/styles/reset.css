@@ -1,12 +1,11 @@
 body {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  font-family: 'MetropolisRegular';
   width: 100%;
-  min-height:(100vh); }
-
-.primeira-pagina {
-  background: #4B4FA1; }
+  font-family: 'Metropolis';
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #36357e; }
 
 /*# sourceMappingURL=reset.css.map */

@@ -1,0 +1,142 @@
+.j-carrossel{
+  position: relative;
+  height: 500px;
+  // max-width: 1140px;
+  max-width: 997px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: center ;
+}
+
+
+.j-carrossel__slides{
+  display: flex;
+  width: 100%;
+}
+
+.j-area-items {
+  display: block;
+  padding: 0 8%;
+}
+.j-carrossel__slide{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 380px;
+  padding: 14px 15.625% 10px;
+  margin-bottom: 24px;
+  border-radius: 10px;
+  background-color: #FFF;
+}
+
+.j-carrossel__slide{
+  margin-right: 8px;
+}
+
+.j-carrossel__titulo{
+  margin-bottom: 20px;
+}
+
+.j-carrossel__img {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding-bottom: 87.5%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.j-carrossel__img__img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%,-50%);
+  object-fit: contain;
+}
+.j-carrossel__caixa-botao{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.home_botao_caixa {
+  display: flex;
+}
+
+.j-carrossel__botao {
+  align-items: center;
+  background: #fe885c;
+  border-radius: 8px;
+  border: none;
+  color: #ffffff;
+  display: flex;
+  font-size: 16px;
+  font-weight: bold;
+  height: 48px;
+  width: 80%;
+  justify-content: center;
+  margin-top: 1.25%;
+  text-transform: uppercase;
+}
+/*
+.j-carrossel__botao:first-child {
+  margin-right: 154px;
+  margin-left: 63.7px;
+}
+
+.j-carrossel__botao:nth-child(2) {
+  margin-right: 154px;
+}
+
+.j-carrossel__botao:nth-child(3) {
+  margin-right: 55.9px;
+}
+*/
+.j-carrossel__botao:hover{
+  background-color:#fe4400;
+}
+
+.j-carrossel__seta-voltar,
+.j-carrossel__seta-avancar {
+  color: #cccccc;
+  position: absolute;
+  top: 39.4734%;
+  transform: translateY(-50%);
+  z-index: 999;
+}
+.j-carrossel__seta-voltar{
+  color: #cccccc;
+  left:  -2%;
+  font-size: 50px;
+  // margin-right: 32.5px;
+  margin-left: 0;
+
+}
+
+.j-carrossel__seta-voltar:hover{
+  color: #333333;
+}
+
+.j-carrossel__seta-avancar{
+  font-size: 50px;
+  right: -3%;
+  margin-left:2.0964%;
+}
+
+.j-carrossel__seta-avancar:hover{
+  color: #333333;
+}
+
+.j-carrossel__seta {
+  margin-left: 17.1px;
+}
+
+.j-area-items{
+  margin-bottom: 8.4210%;
+}
