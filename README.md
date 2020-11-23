@@ -31,7 +31,9 @@ FIFO funciona com várias tecnologias supermaneiras!
   - npx sequelize db:seed:all || yarn sequelize db:seed:all
     - Executa todas as *seeders*
 
-# Routes
+# Routes 
+   - Collection do insomnia pode ser encontrada na pasta assets na raiz do projeto
+   
 - [x] listar unidades | GET /unities
 - [x] inserir usuáro/visitante | POST /users
 - [x] listar jogos | GET /games/:unity_id
