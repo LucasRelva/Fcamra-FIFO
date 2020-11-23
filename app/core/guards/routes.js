@@ -3,6 +3,7 @@ const userRoutes = require('./user.routes');
 const gameRoutes = require('./game.routes');
 const unityRoutes = require('./unity.routes');
 const waitRoutes = require('./wait.routes');
+const matchRoutes = require('./match.routes')
 
 const routes = express.Router();
 
@@ -33,6 +34,6 @@ routes.use('/waits',waitRoutes)
 /**
  * Rotas de Match
  */
-routes.use('/match',waitRoutes)
+routes.use('/match',matchRoutes)
 
 module.exports = routes
