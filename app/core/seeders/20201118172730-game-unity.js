@@ -20,6 +20,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkDelete('unity_games', null, {});
+    await queryInterface.bulkDelete('unity_games', null, { truncate: 'true', restartIdentity: 'true' });
   }
 };
