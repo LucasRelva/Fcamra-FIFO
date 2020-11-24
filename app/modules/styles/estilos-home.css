@@ -660,6 +660,9 @@ body {
     margin-bottom: 20px;
     line-height: 1.25; }
 
+  .j-area-items {
+    padding: 0 16%; }
+
   .j-carrossel__slide {
     height: 396px;
     margin-bottom: 0; }
@@ -667,6 +670,9 @@ body {
   .j-carrossel__botao {
     margin-top: 0;
     width: 100%; }
+
+  .j-carrossel__seta-voltar {
+    left: 10px; }
 
   body {
     position: relative; } }

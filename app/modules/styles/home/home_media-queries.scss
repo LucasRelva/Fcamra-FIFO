@@ -120,7 +120,7 @@
   }
 
   .j-area-items {
-
+    padding: 0 16%;
 
   }
 
@@ -134,6 +134,10 @@
     width: 100%;
   }
 
+  .j-carrossel__seta-voltar{
+    left: 10px;
+
+  }
 
   body{
     position: relative;
@@ -161,6 +165,8 @@
   .home_nav {
     display: none;
   }
+
+
 
   .jm-navegacao {
     width: auto;
