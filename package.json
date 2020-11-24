@@ -12,7 +12,9 @@
     "express": "^4.17.1",
     "mysql2": "^2.2.5",
     "sequelize": "^6.3.5",
-    "slugify": "^1.4.6"
+    "slugify": "^1.4.6",
+    "socket.io": "^3.0.3",
+    "socket.io-client": "^3.0.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.6",

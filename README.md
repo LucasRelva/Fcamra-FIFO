@@ -19,6 +19,8 @@ FIFO funciona com várias tecnologias supermaneiras!
   - Slugify: ^1.4.6
   - Nodemon: ^2.0.6
   - Sequelize-cli: ^6.2.0
+  - Socket.io: ^3.0.3
+  - socket.io-client: "^3.0.3
 
 # Comandos que fazem tudo funcionar
 
