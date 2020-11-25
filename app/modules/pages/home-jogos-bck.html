@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Fifo - Selecione o seu jogo</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/estilos-home.css">
+
+
+</head>
+
+<body>
+
+  <div class="home_nav">
+
+
+    <img class="home_logo_fifo" src="../styles/imagens/fifo_logo_bgclaro.png" alt="">
+
+    <a class="home_nav_link" href="#">jogos</a>
+    <a class="home_nav_link" href="#">filas</a>
+    <a class="home_nav_link" href="#">ajuda</a>
+    <h2>Oi, Pessoa</h2>
+  </div>
+
+  <div class="j-titulo__caixa">
+    <h4 class="home_instrucao_pequeno">escolha o seu jogo</h4>
+    <h1 class="home_instrucao_grande">Eu quero...</h1>
+  </div>
+
+
+  <article class="j-carrossel">
+    <span class="material-icons j-carrossel__seta-voltar">arrow_back_ios</span>
+    <div class="j-carrossel__slides js-carrossel"></div>
+    <span class="material-icons j-carrossel__seta-avancar">arrow_forward_ios</span>
+  </article>
+
+  <div class="j-carrossel__pontos"></div>
+
+
+
+  <!-- </div> -->
+
+
+
+
+  <!--
+  <div class="home_jogo_caixa">
+  <span class="material-icons carrossel_seta-voltar">arrow_back_ios</span>
+  <div class="home_jogo_selecao">
+  <h2 class="home_jogo_titulo">Playstation Fifo</h2>
+</div>
+
+<div class="home_jogo_selecao">
+<h2 class="home_jogo_titulo">Playstation Zelda</h2>
+</div>
+<div class="home_jogo_selecao">
+<h2 class="home_jogo_titulo">Sinuca</h2>
+</div>
+
+</div>
+
+
+
+
+</div>
+
+<div class="home_botao_caixa">
+
+<button class="j-carrossel__botao" type="button" name="button_entrar">entrar na fila<span class="material-icons">
+east
+</span>
+</button>
+
+<button class="j-carrossel__botao" type="button" name="button_entrar">entrar na fila<span class="material-icons">
+east
+</span>
+</button>
+<button class="j-carrossel__botao" type="button" name="button_entrar">entrar na fila<span class="material-icons">
+east
+</span>
+</button>
+
+</div>
+
+<div class="js-carousel--simple-dots"></div>
+</div> -->
+
+<!-- <div class="js-carousel--simple-dots"></div>
+</div> -->
+
+<!-- <button class="glider-prev">&laquo;</button>
+<button class="glider-next">&raquo;</button>
+<div id="dots"></div> -->
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+
+<script>
+// window.addEventListener('load',function(){
+let carrossel = '';
+for (let index = 0; index < 10; index++) {
+  carrossel += `
+  <div>
+    <div class="j-area-items">
+      <article class="j-carrossel__slide">
+        <h2 class="j-carrossel__titulo">Teste ${index+1}</h2>
+        <div class="j-carrossel__img"><img src="../styles/imagens/fifo_logo_bgclaro.png" class="j-carrossel__img__img" />
+      </article>
+      <div class="j-carrossel__caixa-botao">
+        <button class="j-carrossel__botao" type="button" name="button_entrar">
+        entrar na fila
+        <span class="material-icons j-carrossel__seta" >east</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  `
+
+}
+
+var $carrosselTeste = document.querySelector(".js-carrossel");
+$carrosselTeste.innerHTML = carrossel;
+
+new Glider($carrosselTeste, {
+  slidesToShow: 1,
+  slidesToScroll: 2,
+  draggable: true,
+  scrollLock: true,
+  itemWidth:320,
+  dots: ".j-carrossel__pontos",
+  arrows: {
+    prev: ".j-carrossel__seta-voltar",
+    next: ".j-carrossel__seta-avancar",
+  },
+  responsive: [
+    {
+      // screens greater than >= 775px
+      breakpoint: 775,
+      settings: {
+        // Set to `auto` and provide item width to adjust to viewport
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        duration: 0.25,
+      },
+    },
+    {
+      // screens greater than >= 980px
+      breakpoint: 980,
+      settings: {
+        // Set to `auto` and provide item width to adjust to viewport
+        slidesToShow: 3,
+        slidesToScroll: 16,
+        duration: 0.25,
+
+      },
+    },
+    {
+      // screens greater than >= 980px
+      breakpoint: 1140,
+      settings: {
+        // Set to `auto` and provide item width to adjust to viewport
+        slidesToShow: 4,
+        slidesToScroll: 2,
+        duration: 0.25,
+
+      },
+    },
+    {
+      // screens greater than >= 980px
+      breakpoint: 2140,
+      settings: {
+        // Set to `auto` and provide item width to adjust to viewport
+        slidesToShow: 4,
+        slidesToScroll: 2,
+        duration: 0.25,
+
+      },
+    },
+  ],
+});
+
+
+
+
+// const $carrosselTeste = document.querySelector('.js-carrossel');
+// $carrosselTeste.innerHTML = carrossel;
+//  new Glider($carrosselTeste, {
+// slidesToShow: 5,
+//   slidesToScroll: 5,
+//   draggable: true,
+//   dots: '.dots',
+//   arrows: {
+//     prev: '.glider-prev',
+//     next: '.glider-next'
+//   }
+// });
+// });
+
+</script>
+
+</html>
