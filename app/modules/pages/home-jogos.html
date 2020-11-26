@@ -16,16 +16,16 @@
 
 
   <!-- Navegação Desktop  -->
-  <div class="home_nav">
-    <button class="home_nav_botao click-event" type="button" name="button">
-      <span class="material-icons home_nav_icone"> arrow_back</span></button>
-    <img class="home_logo_fifo" src="../styles/imagens/fifo_logo_bgclaro.png" alt="">
-    <ul class="home_nav_container_links">
-      <li><a class="home_nav_link" href="#">jogos</a></li>
-      <li><a class="home_nav_link" href="#">filas</a></li>
-      <li><a class="home_nav_link" href="#">ajuda</a></li>
+  <div class="navegacao__container">
+    <button class="navegacao__botao_burger click-event" type="button" name="button">
+      <span class="material-icons navegacao__botao_voltar"> arrow_back</span></button>
+    <img class="navegacao__logo" src="../styles/imagens/fifo_logo_bgclaro.png" alt="">
+    <ul class="navegacao__links">
+      <li><a class="navegacao__link" href="#">jogos</a></li>
+      <li><a class="navegacao__link" href="#">filas</a></li>
+      <li><a class="navegacao__link" href="#">ajuda</a></li>
     </ul>
-    <h2 class="home_nav_pessoa">Oi, Pessoa</h2>
+    <h2 class="navegacao__usuario">Oi, Pessoa</h2>
 
   </div> <!-- Fim navegação desktop-->
 
@@ -36,28 +36,33 @@
     <span class="material-icons jm-navegacao__icone-menu click-event">menu</span>
   </div>
 
-  <!-- Fim Navegação Mobile <=767px -->
+  <!-- Fim Navegação Mobile -->
 
 
   <h4 class="j-instrucao_pequeno">escolha o seu jogo</h4>
   <h1 class="j-instrucao_grande">Eu quero...</h1>
 
+<!-- Carrossel -->
   <article class="j-carrossel">
     <div class="j-carrossel__slides js-carrossel">
 
     </div>
   </article>
-
-  <div class="j-carrossel__pontos"></div>
+<!-- Fim do Carrossel -->
+  <div class="j-carrossel__pontos"></div> <!-- Pontos de navegação -->
 
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous"></script>
 
 <script>
+
+
+// Script do Carrossel
+
   // window.addEventListener('load',function(){
   let carrossel = '';
-  for (let index = 0; index < 10; index++) {
+  for (let index = 0; index < 11; index++) {
     carrossel += `
   <div>
   <div class="j-area-items">
@@ -120,14 +125,14 @@
   const button = document.querySelectorAll('.click-event');
   button.forEach(function(btn){
     return btn.addEventListener('click', function(){
-    document.querySelector('.home_nav').classList.toggle("visible");
+    document.querySelector('.navegacao__container').classList.toggle("visible");
   })});
   // function toggleMenu(){
-  // document.querySelector('.home_nav').classList.toggle("visible");
+  // document.querySelector('.navegacao__container').classList.toggle("visible");
   // }
 
 
-
+// Fim do script do Carrossel
 
 
 

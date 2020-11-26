@@ -354,11 +354,11 @@ body {
 @font-face {
   font-family: 'Metropolis ExtraBold';
   src: url("../styles/helpers/fonts/Metropolis-ExtraBold.otf"); }
-.home_logo_fifo {
+.navegacao__logo {
   color: red;
   width: 6.9054%; }
 
-.home_nav {
+.navegacao__container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -367,32 +367,32 @@ body {
   margin-right: 76px;
   margin-top: 30px; }
 
-.home_nav_container_links {
+.navegacao__links {
   display: flex; }
-  .home_nav_container_links li + li {
+  .navegacao__links li + li {
     margin-left: 60px; }
 
-.home_nav_botao {
+.navegacao__botao_burger {
   display: none; }
 
-.home_nav_link {
+.navegacao__link {
   color: #333333;
   cursor: pointer;
   font-size: 24px;
   font-weight: bold;
   text-decoration: none; }
 
-.home_nav_link:nth-child(2) {
+.navegacao__link:nth-child(2) {
   margin-left: 29.4348%;
   margin-right: 6.0441%; }
 
-.home_nav_link:nth-child(3) {
+.navegacao__link:nth-child(3) {
   margin-right: 6.0441%; }
 
-.home_nav_link:nth-child(4) {
+.navegacao__link:nth-child(4) {
   margin-right: 23.7987%; }
 
-.home_nav_link:hover {
+.navegacao__link:hover {
   color: #fe4400; }
 
 .jm-navegacao {
@@ -416,31 +416,6 @@ body {
   line-height: normal;
   margin-top: 1.4035%;
   margin-bottom: 3.6842%; }
-
-.home_jogo_caixa {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%; }
-
-.home_jogo_titulo {
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 1.25;
-  margin-top: 14px;
-  text-align: center; }
-
-.home_jogo_selecao {
-  background-color: #ffffff;
-  border-radius: 10px;
-  height: 398px;
-  width: 320px; }
-
-.home_jogo_selecao:nth-child(2) {
-  margin-right: 90px; }
-
-.home_jogo_selecao:nth-child(3) {
-  margin-right: 90px; }
 
 .j-carrossel {
   position: relative;
@@ -581,7 +556,7 @@ body {
   .home_botao_fila {
     margin-top: 20px; } }
 @media (min-width: 0) and (max-width: 768px) {
-  .home_nav {
+  .navegacao__container {
     width: 100%;
     height: 100%;
     padding: 69px 40.2px 56.9px 0;
@@ -597,7 +572,7 @@ body {
     left: 100%;
     transition: all linear .25s; }
 
-  .home_nav.visible {
+  .navegacao__container.visible {
     left: 0%; }
 
   .home_logo_fifo {
@@ -605,23 +580,23 @@ body {
     order: 4;
     margin-top: auto; }
 
-  .home_nav_container_links {
+  .navegacao__links {
     display: flex;
     flex-direction: column;
     align-items: flex-end; }
-    .home_nav_container_links li {
+    .navegacao__links li {
       margin-bottom: 63px; }
-      .home_nav_container_links li + li {
+      .navegacao__links li + li {
         margin-left: 0px; }
 
-  .home_nav_link {
+  .navegacao__link {
     margin-right: 0 !important;
     margin-bottom: 63px; }
 
-  .home_nav_pessoa {
+  .navegacao__usuario {
     display: none; }
 
-  .home_nav_botao {
+  .navegacao__botao_burger {
     display: block;
     border-radius: 8px;
     background-color: #FE885C;
@@ -630,7 +605,7 @@ body {
     border: 0;
     margin-bottom: 43px; }
 
-  .home_nav_icone {
+  .navegacao__botao_voltar {
     color: #fff; }
 
   .jm-navegacao {
@@ -677,43 +652,82 @@ body {
   body {
     position: relative; } }
 @media (min-width: 768px) and (max-width: 1024px) {
-  .home_nav {
+  .navegacao__container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    margin-right: 10%;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    left: 100%;
+    transition: all linear .25s; }
+
+  .navegacao__container.visible {
+    left: 1%; }
+
+  .home_logo_fifo {
+    width: 78.57px;
+    order: 4;
+    margin-top: auto; }
+
+  .navegacao__links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; }
+    .navegacao__links li {
+      margin-bottom: 63px; }
+      .navegacao__links li + li {
+        margin-left: 0px; }
+
+  .navegacao__link {
+    margin-right: 0 !important;
+    margin-bottom: 63px; }
+
+  .navegacao__usuario {
     display: none; }
 
+  .navegacao__botao_burger {
+    display: block;
+    border-radius: 8px;
+    background-color: #FE885C;
+    width: 48px;
+    height: 48px;
+    border: 0;
+    margin-bottom: 43px; }
+
+  .navegacao__botao_voltar {
+    color: #fff; }
+
   .jm-navegacao {
-    width: auto;
+    width: 100%;
     display: flex;
     align-items: center;
-    align-content: center; }
+    justify-content: space-between;
+    padding: 24px 24px 0; }
 
   .jm-navegacao__logo {
-    width: 93.3px;
-    margin-right: 241.3px;
-    margin-left: 31.2px;
-    margin-top: 21.4px; }
+    width: 62px; }
 
   .jm-navegacao__usuario {
     color: #36357e;
     font-family: 'Metropolis Bold';
-    font-size: 22px;
-    margin-right: 234px;
-    margin-top: 41px;
+    font-size: 16px;
     text-align: left;
     line-height: 1.1; }
 
-  .jm-navegacao__icone-menu {
-    font-size: 40px;
-    margin-right: 17.9px;
-    margin-top: 42px; }
-
   .j-instrucao_pequeno {
-    color: #333333;
     font-size: 14px;
-    margin-top: 113px;
+    margin-top: 28px;
     line-height: normal; }
 
   .j-instrucao_grande {
-    font-size: 45px;
+    font-size: 34px;
     margin-bottom: 20px;
     line-height: 1.25; }
 
@@ -721,8 +735,15 @@ body {
     padding: 0 16%; }
 
   .j-carrossel__slide {
-    height: 398px;
-    margin-bottom: 24px; }
+    height: 396px;
+    margin-bottom: 0; }
+
+  .j-carrossel__botao {
+    margin-top: 0;
+    width: 100%; }
+
+  .j-carrossel__seta-voltar {
+    left: 10px; }
 
   .j-carrossel__botao {
     width: 280px;
