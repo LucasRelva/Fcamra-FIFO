@@ -403,10 +403,27 @@ body {
   text-align: center; }
 
 .home_jogo_selecao {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   background-color: #ffffff;
   border-radius: 10px;
   height: 398px;
-  width: 320px; }
+  width: 320px; 
+}
+.home_jogo_selecao::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -35%;
+  width: 70%;
+  height: 60%;
+  background-image: url(../styles/imagens/joystick.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
 
 .home_jogo_selecao:first-child {
   margin-right: 6.7996%; }
@@ -430,7 +447,8 @@ body {
   justify-content: center;
   margin-top: 26.7px;
   text-transform: uppercase;
-  width: 256px; }
+  width: 256px;
+ }
 
 .home_botao_fila:first-child {
   margin-right: 195px; }
@@ -443,6 +461,38 @@ body {
 
 .material-icons {
   margin-left: 17.1px; }
+  
+.fila {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	color: #6263AB;
+	font-size: 25px;
+	flex: 0 1 auto;
+	width: 100%;
+	padding: 10px 15px; 
+}
+.fila li {
+  width: 100%;
+  line-height: 1.25em;
+}
+.fila .material-icons { margin-left: 0;}
+.fila .position-player { margin-right: 20px}
+
+.ja {
+	color: gray;
+	align-self: start;
+}
+
+.es {
+	color: gray;
+	align-self: start;
+}
+
+.jogo_img {
+	height: 200px;
+}
 
 @media (max-height: 768px) {
   .home_instrucao_pequeno {
