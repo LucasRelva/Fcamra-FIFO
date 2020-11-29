@@ -5,5 +5,4 @@ node_modules/**/*
 yarn.lock
 .editorconfig
 .yarnrc
-
-
+app/core/config/dockerfile
