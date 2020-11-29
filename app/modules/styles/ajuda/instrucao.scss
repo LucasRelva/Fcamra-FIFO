@@ -1,0 +1,94 @@
+.instrucao__caixa-1 {
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.instrucao__ilustra_logo {
+  margin-top: 79px;
+  width: 191px;
+
+  position: relative;
+}
+
+.instrucao__botao_pular {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  position: absolute;
+  left: 1242px;
+}
+
+.instrucao__seta {}
+
+.instrucao__texto-1 {
+  font-family: 'Metropolis SemiBold';
+  font-size: 32px;
+  text-align: center;
+  margin-top: 32px;
+}
+
+.instrucao__texto-funciona{
+  font-size: 24px;
+  font-family: 'Metropolis Medium';
+  color: #787878;
+  margin-top: 32px;
+
+}
+
+
+.instrucao__caixa-2 {
+  display: flex;
+  height: 360px;
+  justify-content: space-around;
+  background-color: #fe662e;
+}
+
+.instrucao__texto-2 {
+  font-family: 'Metropolis SemiBold';
+  color:#ffffff;
+  font-size: 32px;
+  margin-top: 172px;
+}
+
+.instrucao__ilustra_dispositivos {
+  width: 352px;
+}
+
+.instrucao__caixa-3 {
+  height: 360px;
+  background-color: #6263ab;
+}
+
+.instrucao__ilustra_jogos {}
+
+.instrucao__texto-3{
+  font-family: 'Metropolis SemiBold';
+  font-size: 32px;
+}
+
+.instrucao__caixa-4 {
+  height: 360px;
+  background-color: #e5e5e5;
+}
+
+.instrucao__texto-4 {
+  font-size: 32px;
+}
+
+.instrucao__ilustra_botao {}
+
+.instrucao__caixa-5 {
+  height: 360px;
+  background-color: #333333;
+}
+
+.instrucao__ilustra_cafe {}
+
+.instrucao__texto-5 {
+  font-size: 32px;
+}
+
+.instrucao__botao {}

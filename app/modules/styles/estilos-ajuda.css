@@ -329,12 +329,10 @@ template {
 
 body {
   width: 100%;
-  font-family: 'Metropolis Bold';
+  font-family: 'Metropolis Medium';
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; }
+  flex-direction: column; }
 
 @font-face {
   font-family: 'Metropolis';
@@ -351,94 +349,75 @@ body {
 @font-face {
   font-family: 'Metropolis ExtraBold';
   src: url("../styles/helpers/fonts/Metropolis-ExtraBold.otf"); }
-.form {
-  max-width: 460px;
-  width: 100%;
-  height: 48px;
+@font-face {
+  font-family: 'Metropolis SemiBold';
+  src: url("../styles/helpers/fonts/Metropolis-SemiBold.otf"); }
+.instrucao__caixa-1 {
+  height: 360px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  align-items: center; }
+
+.instrucao__ilustra_logo {
+  margin-top: 79px;
+  width: 191px;
   position: relative; }
 
-.form__input {
-  width: 100%;
-  height: 100%;
-  border-radius: 67px;
-  border: 0;
-  background-color: #f1f1f1;
-  margin-top: 32px;
-  padding-left: 17px;
-  padding-right: 20%; }
-
-.form__botao_submit {
-  width: 48px;
-  height: 48px;
-  border-radius: 8px;
-  background-color: #fe885c;
-  border: 0;
-  z-index: 3;
+.instrucao__botao_pular {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
   position: absolute;
-  left: 80.8695%;
-  top: 16px; }
+  left: 1242px; }
 
-.form__botao_submit:hover {
-  background-color: #fe4400; }
+.instrucao__texto-1 {
+  font-family: 'Metropolis SemiBold';
+  font-size: 32px;
+  text-align: center;
+  margin-top: 32px; }
 
-.form__botao_icone {
-  color: #fff; }
-
-.instrucao__email {
-  font-size: 40px;
-  margin-top: 71.9px;
-  margin-bottom: 0; }
-
-.logo {
-  width: 250px;
-  margin-top: 133px; }
-
-.visitante__titulo {
-  font-family: 'Metropolis Medium';
+.instrucao__texto-funciona {
   font-size: 24px;
-  margin-top: 42px; }
+  font-family: 'Metropolis Medium';
+  color: #787878;
+  margin-top: 32px; }
 
-.visitante__botao {
-  width: 166px;
-  height: 48px;
-  border-radius: 8px;
-  font-size: 16px;
+.instrucao__caixa-2 {
+  display: flex;
+  height: 360px;
+  justify-content: space-around;
+  background-color: #fe662e; }
+
+.instrucao__texto-2 {
+  font-family: 'Metropolis SemiBold';
   color: #ffffff;
-  background-color: #6263ab;
-  border: 0;
-  margin-top: 16px;
-  text-transform: uppercase; }
+  font-size: 32px;
+  margin-top: 172px; }
 
-.visitante__aviso {
-  margin-top: 32px;
-  margin-bottom: 156px; }
+.instrucao__ilustra_dispositivos {
+  width: 352px; }
 
-@media (max-width: 768px) {
-  .logo {
-    width: 200px;
-    margin-top: 80px; }
+.instrucao__caixa-3 {
+  height: 360px;
+  background-color: #6263ab; }
 
-  .instrucao__email {
-    font-size: 24px;
-    margin-top: 45.6px;
-    margin-bottom: 0; }
+.instrucao__texto-3 {
+  font-family: 'Metropolis SemiBold';
+  font-size: 32px; }
 
-  .form__input {
-    width: 320px;
-    left: 75%; }
+.instrucao__caixa-4 {
+  height: 360px;
+  background-color: #e5e5e5; }
 
-  .visitante__titulo {
-    font-size: 20px; }
+.instrucao__texto-4 {
+  font-size: 32px; }
 
-  .visitante__botao {
-    margin-top: 16px;
-    font-size: 16px; }
+.instrucao__caixa-5 {
+  height: 360px;
+  background-color: #333333; }
 
-  .visitante__aviso {
-    width: 329px;
-    margin-bottom: 27px; } }
+.instrucao__texto-5 {
+  font-size: 32px; }
 
-/*# sourceMappingURL=estilos-login.css.map */
+/*# sourceMappingURL=estilos-ajuda.css.map */

@@ -1,0 +1,38 @@
+body{
+width: 100%;
+font-family: 'Metropolis Medium';
+min-height:(100vh);
+display: flex;
+flex-direction: column;
+}
+
+
+
+@font-face {
+    font-family: 'Metropolis';
+    src: url("../styles/helpers/fonts/Metropolis-Regular.otf")
+}
+
+@font-face {
+    font-family: 'Metropolis Light';
+    src: url("../styles/helpers/fonts/Metropolis-Light.otf")
+}
+
+@font-face {
+    font-family: 'Metropolis Medium';
+    src: url("../styles/helpers/fonts/Metropolis-Medium.otf")
+}
+@font-face {
+    font-family: 'Metropolis Bold';
+    src: url("../styles/helpers/fonts/Metropolis-Bold.otf")
+}
+
+@font-face {
+    font-family: 'Metropolis ExtraBold';
+    src: url("../styles/helpers/fonts/Metropolis-ExtraBold.otf")
+}
+
+@font-face {
+    font-family: 'Metropolis SemiBold';
+    src: url("../styles/helpers/fonts/Metropolis-SemiBold.otf")
+}
