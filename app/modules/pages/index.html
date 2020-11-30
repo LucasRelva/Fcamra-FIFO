@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,18 +8,31 @@
   <link rel="stylesheet" href="../styles/estilos-unidade.css">
 
 </head>
-<body class="primeira-pagina" >
 
-
-
+<body class="primeira-pagina">
 
   <img class="selecao_logo_fifo" src="..\styles\imagens\420X315_bgAZUL.png" alt="Fifo logo">
-    <h2 class="selecao_instrucao">Selecione sua unidade FCamara</h2>
-    <div class="selecao_caixa_botao">
-      <a class="selecao_botao"href="#">Santos</a>
-      <a class="selecao_botao" href="#">São Paulo</a>
-    </div>
+  <h2 class="selecao_instrucao">Selecione sua unidade FCamara</h2>
+  <div class="selecao_caixa_botao">
+  </div>
 
 
-  </body>
-  </html>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+  const selecao = document.querySelector('.selecao_caixa_botao');
+  axios.get('http://localhost:8000/unities/')
+  .then(function (response) {
+    response.data.map(unity => {
+      selecao.innerHTML += `
+      <a class="selecao_botao" href="home-jogos.html?unity_id=${unity.id}">${unity.name}</a> 
+      `
+      console.log(unity)
+    })
+  })
+  .catch(function (error) {
+    alert('Erro retornar unidades!')
+  })
+</script>
+
+</html>

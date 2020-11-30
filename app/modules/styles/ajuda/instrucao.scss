@@ -1,0 +1,215 @@
+// Variaveis de cores
+$laranja-fcamara: #fe662e;
+$cinza-fcamara: #e5e5e5;
+$cinEsc-fcamara: #787878;
+$roxo-fcamara: #6263ab;
+$preto-fcamara: #333333;
+$branco-fcamara: #ffffff;
+$azul-fcamara: #36357e; // Variaveis gerais
+$font-passo: 32px;
+$font-numero: 64px;
+$altura-box: 360px;
+$metropolis-black: 'Metropolis Black';
+$metropolis-semi: 'Metropolis SemiBold';
+
+.instrucao__caixa_pular {
+  display: flex;
+  width: 48px;
+  height: 70px;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: absolute;
+  left: 86.25%;
+  right: 13.1578%;
+  top: 4.3859%;
+  cursor: pointer;
+}
+
+.instrucao__seta {
+  width: 48px;
+  color: #787878;
+  text-align: center;
+}
+
+.instrucao__botao_pular {
+  font-family: 'Metropolis Regular';
+  font-size: 18px;
+  border: 0;
+  color: #787878;
+  background-color: #fff;
+}
+
+.instrucao__caixa_intro {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .instrucao__ilustra_logo {
+    margin-top: 79px;
+    width: 191px;
+    position: relative;
+  }
+
+  .instrucao__intro_texto {
+    font-family: 'Metropolis SemiBold';
+    font-size: $font-passo;
+    text-align: center;
+    margin-top: 32px;
+  }
+
+  .instrucao__texto-funciona {
+    font-size: 24px;
+    font-family: 'Metropolis Medium';
+    color: $cinEsc-fcamara;
+    margin-top: 32px;
+    margin-bottom: 31px;
+  }
+}
+
+.instrucao__caixa-1 {
+  display: flex;
+  height: $altura-box;
+  justify-content: space-around;
+  background-color: $laranja-fcamara;
+
+  .instrucao__texto_caixa-1 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 223px;
+
+    .instrucao_numero-1 {
+      font-family: $metropolis-black;
+      font-size: $font-numero;
+      color: #c23400;
+      margin-top: 90px;
+    }
+
+    .instrucao__texto-1 {
+      font-family: 'Metropolis SemiBold';
+      color: $branco-fcamara;
+      font-size: $font-passo;
+    }
+  }
+
+  .instrucao__ilustra_dispositivos {
+    height: 330px;
+    margin-top: 25px;
+    margin-right: 150px;
+  }
+}
+
+.instrucao__caixa-2 {
+  display: flex;
+  height: $altura-box;
+  background-color: $roxo-fcamara;
+  justify-content: space-around;
+
+  .instrucao__ilustra_jogos {
+    height: 292px;
+    margin: 50px 69px 38px 223px;
+  }
+
+  .instrucao__texto_caixa-2 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+    margin-right: 223px;
+    text-align: right;
+
+    .instrucao_numero-2 {
+      color: $azul-fcamara;
+      font-family: $metropolis-black;
+      font-size: $font-numero;
+    }
+
+    .instrucao__texto-2 {
+      font-family: 'Metropolis SemiBold';
+      font-size: $font-passo;
+      color: $branco-fcamara;
+    }
+  }
+}
+
+.instrucao__caixa-3 {
+  display: flex;
+  justify-content: space-around;
+  height: $altura-box;
+  background-color: $cinza-fcamara;
+
+  .instrucao__texto_caixa-3 {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    margin-top: 90px;
+    margin-left: 223px;
+
+    .instrucao_numero-3 {
+      font-family: $metropolis-black;
+      font-size: $font-numero;
+      color: $cinEsc-fcamara;
+    }
+
+    .instrucao__texto-3 {
+      font-family: $metropolis-semi;
+      font-size: $font-passo;
+    }
+  }
+
+  .instrucao__ilustra_botao {
+    height: 260px;
+    margin-top: 60px;
+    margin-right: 222px;
+  }
+}
+
+.instrucao__caixa-4 {
+  display: flex;
+  height: $altura-box;
+  background-color: $preto-fcamara;
+  justify-content: space-around;
+
+  .instrucao__ilustra_cafe {
+    height: 340px;
+    margin-top: 20px;
+    margin-left: 193px;
+  }
+
+  .instrucao__texto_caixa-4 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 93px;
+    text-align: right;
+    margin-right: 222px;
+
+    .instrucao_numero-4 {
+      font-family: $metropolis-black;
+      font-size: $font-numero;
+      color: $cinEsc-fcamara;
+    }
+
+    .instrucao__texto-4 {
+      font-family: $metropolis-semi;
+      font-size: $font-passo;
+      color: $branco-fcamara;
+    }
+  }
+}
+
+.instruca__botao_caixa {
+  height: 224px;
+  display: flex;
+  justify-content: center;
+  margin: 80px 602px 77.7px 603px;
+}
+
+.instrucao__botao {
+  font-family: "Metropolis Bold";
+  width: 235px;
+  height: 66px;
+  font-size: 24px;
+  border-radius: 8px;
+  background-color: #fe4400;
+  border: 0;
+}
