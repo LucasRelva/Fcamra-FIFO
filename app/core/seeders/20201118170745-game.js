@@ -10,7 +10,7 @@ module.exports = {
         is_active: true,
         created_at: new Date(),
         updated_at: new Date(),
-      },{
+      } , {
         id: 2,
         name: 'Bilhar',
         slug: 'bilhar',
