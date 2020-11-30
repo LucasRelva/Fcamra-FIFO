@@ -88,6 +88,22 @@ function WaitClass() {
   const checkUser = function (email) {
     return email === jogador ? "me" : email.split("@")[0];
   };
+
+  this.buttonsUser = function (user) {
+    const container = document.getElementById('area-buttons');
+    const button = document.createElement('button');
+    button.classList.add('home_botao_fila');
+    button.setAttribute('type','button');
+    button.setAttribute('name','button_entrar')
+    const buttonText = document.createTextNode('Iniciar');
+    button.appendChild(buttonText);
+    const span = document.createElement('span');
+    span.classList.add('material-icons');
+    const spanText = document.createTextNode('east');
+    span.appendChild(spanText);
+    button.appendChild(span);
+    container.appendChild(button);
+  }
 }
 
 const Wait = new WaitClass();

@@ -41,6 +41,20 @@ function UnityClass() {
   this.getUnity = function () {
     return  localStorage.getItem('unity');
   }
+
+  this.checkNotUnity = function () {
+    const unity = this.getUnity();
+    if (!unity) {
+        window.location = "index.html";
+    }
+  };
+
+  this.checkHasHasUnity = function () {
+    const unity = this.getUnity();
+    if (unity) {
+        window.location = 'login.html';
+    }
+  };
 }
 
 const Unity = new UnityClass();
