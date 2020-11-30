@@ -4,7 +4,10 @@ const Game = require('../models/Game')
 const { Op } = require('sequelize')
 const Unity = require('../models/Unity')
 const Match = require('../models/Match')
-
+/**
+ * staus: 0 esperando, 1 em jogo/não saiu, 2 já jogou/cancelou
+ * 
+ */
 module.exports = {
 
     async store(req, res) {
@@ -37,7 +40,6 @@ module.exports = {
 
         const waits = await Wait.findAll({
             attributes: ['status', 'id'],
-        
             where: {
                 game_id,
                 unity_id, 
@@ -54,18 +56,14 @@ module.exports = {
     },
 
     async updateStatus(req, res) {
-        const { wait_id, status } = req.params
-
-        const wait = await Wait.findByPk(wait_id)
-
-        if (!wait) res.status(400).json({ error: 'Wait not found!' })
-
+        const { wait_id, status } = req.params;
+        const wait = await Wait.findByPk(wait_id);
+        if (!wait) res.status(400).json({ error: 'Wait not found!' });
        await Wait.update({status: status}, {
             where: {
               id: wait_id
             }
         });
-
         if(status===2){
             const matchs = await wait.getMatches({
                 where: {
