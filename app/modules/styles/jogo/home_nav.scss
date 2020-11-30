@@ -1,0 +1,74 @@
+.home_nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 6.0441%;
+  margin-left: 48px;
+  margin-right: 76px;
+  margin-top: 30px;
+
+
+}
+.home_nav_container_links {
+  display: flex;
+  li {
+    & + li {margin-left: 60px}
+  }
+}
+.home_nav_botao{ display: none; }
+.home_nav_link{
+  color: #333333;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.home_nav_link:nth-child(2){
+  margin-left: 29.4348%;
+  margin-right: 6.0441%;
+}
+
+.home_nav_link:nth-child(3){
+  margin-right: 6.0441%;
+}
+
+.home_nav_link:nth-child(4){
+  margin-right: 23.7987%;
+}
+
+.home_nav_link:hover{
+  color: #fe4400;
+}
+
+
+
+.jm-navegacao{
+  display: none;
+}
+
+.jm-navegacao__logo{
+
+}
+
+
+.jm-navegacao__usuario{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//

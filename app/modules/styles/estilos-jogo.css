@@ -410,7 +410,8 @@ body {
   background-color: #ffffff;
   border-radius: 10px;
   height: 398px;
-  width: 320px; 
+  width: 320px;
+  font-family: Metropolis;
 }
 .home_jogo_selecao::after {
   content: "";
@@ -471,11 +472,12 @@ body {
 	font-size: 25px;
 	flex: 0 1 auto;
 	width: 100%;
-	padding: 10px 15px; 
+	padding: 20px 30px; 
 }
 .fila li {
   width: 100%;
   line-height: 1.25em;
+  padding: 3px;
 }
 .fila .material-icons { margin-left: 0;}
 .fila .position-player { margin-right: 20px}

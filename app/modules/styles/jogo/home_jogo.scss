@@ -1,0 +1,36 @@
+.home_jogo_caixa{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+
+
+}
+
+.home_jogo_titulo{
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.25;
+  margin-top: 14px;
+  text-align: center;
+
+}
+
+// alef
+
+
+.home_jogo_selecao{
+  background-color: #ffffff;
+  border-radius: 10px;
+  height:398px;
+  width: 320px;
+
+}
+
+.home_jogo_selecao:nth-child(2){
+  margin-right: 90px;
+}
+
+.home_jogo_selecao:nth-child(3){
+  margin-right: 90px;
+}
