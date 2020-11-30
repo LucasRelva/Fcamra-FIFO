@@ -1,37 +1,38 @@
-body{
-width: 100%;
-font-family: 'Metropolis Medium';
-min-height:(100vh);
-display: flex;
-flex-direction: column;
-justify-content: baseline;
-align-items: center;
-align-content: center;
-background-color: #e5e5e5;
-color: #333333;
+body {
+    width: 100%;
+    font-family: 'Metropolis Medium';
+    min-height: (100vh);
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+    align-content: center;
+    background-color: #e5e5e5;
+    color: #333333;
 
 }
 
 @font-face {
     font-family: 'Metropolis';
-    src: url("../styles/helpers/fonts/Metropolis-Regular.otf")
+    src: url("../helpers/fonts/Metropolis-Regular.otf")
 }
 
 @font-face {
     font-family: 'Metropolis Light';
-    src: url("../styles/helpers/fonts/Metropolis-Light.otf")
+    src: url("../helpers/fonts/Metropolis-Light.otf")
 }
 
 @font-face {
     font-family: 'Metropolis Medium';
-    src: url("../styles/helpers/fonts/Metropolis-Medium.otf")
+    src: url("../helpers/fonts/Metropolis-Medium.otf")
 }
+
 @font-face {
     font-family: 'Metropolis Bold';
-    src: url("../styles/helpers/fonts/Metropolis-Bold.otf")
+    src: url("../helpers/fonts/Metropolis-Bold.otf")
 }
 
 @font-face {
     font-family: 'Metropolis ExtraBold';
-    src: url("../styles/helpers/fonts/Metropolis-ExtraBold.otf")
+    src: url("../helpers/fonts/Metropolis-ExtraBold.otf")
 }

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Fifo - Selecione o seu jogo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glider-js/1.7.3/glider.min.css"
+    integrity="sha512-YM6sLXVMZqkCspZoZeIPGXrhD9wxlxEF7MzniuvegURqrTGV2xTfqq1v9FJnczH+5OGFl5V78RgHZGaK34ylVg=="
+    crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="../styles/estilos-home.css">
+</head>
+
+<body>
+
+
+  <!-- Navegação Desktop  -->
+  <div class="navegacao__container">
+    <button class="navegacao__botao_burger click-event" type="button" name="button">
+      <span class="material-icons navegacao__botao_voltar"> arrow_back</span></button>
+    <img class="navegacao__logo" src="../styles/imagens/fifo_logo_bgclaro.png" alt="">
+    <ul class="navegacao__links">
+      <li><a class="navegacao__link" href="#">jogos</a></li>
+      <li><a class="navegacao__link" href="#">filas</a></li>
+      <li><a class="navegacao__link" href="#">ajuda</a></li>
+    </ul>
+    <h2 class="navegacao__usuario">Oi, Pessoa</h2>
+
+  </div> <!-- Fim navegação desktop-->
+
+  <!-- Navegação Mobile <=767px -->
+  <div class="jm-navegacao j-navegacao">
+    <img class="jm-navegacao__logo" src="../styles/imagens/fifo_logo_bgclaro.png" alt="">
+    <h2 class="jm-navegacao__usuario">oi, pessoa</h2>
+    <span class="material-icons jm-navegacao__icone-menu click-event">menu</span>
+  </div>
+
+  <!-- Fim Navegação Mobile -->
+
+
+  <h4 class="j-instrucao_pequeno">escolha o seu jogo</h4>
+  <h1 class="j-instrucao_grande">Eu quero...</h1>
+
+  <!-- Carrossel -->
+  <article class="j-carrossel">
+    <div class="j-carrossel__slides js-carrossel" id="area-items">
+
+    </div>
+    <button aria-label="Previous" class="glider-prev">«</button>
+    <button aria-label="Next" class="glider-next">»</button>
+    <div role="tablist" class="dots"></div>
+  </article>
+  <!-- Fim do Carrossel -->
+  <div class="j-carrossel__pontos"></div> <!-- Pontos de navegação -->
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/glider-js/1.7.3/glider.min.js"
+  integrity="sha512-NI5tuaiyhrV4EkyHBGHJj9uaL6uu7fz/WCoMnEwvHi8WXTKZ9f8P1v517sdTGVpT31/UEHRdLMuNdPon9F3HUg=="
+  crossorigin="anonymous"></script>
+
+<script>
+  // Script do Carrossel
+
+  const BASE_URL = 'http://localhost:8000/';
+  let carrossel = '';
+  var paramsString1 = window.location.href.split('?')[1];
+  var searchParams1 = new URLSearchParams(paramsString1);
+  var carrosselTeste = document.getElementById("area-items");
+  if (searchParams1.has('unity_id')) {
+    const unity_id = searchParams1.get('unity_id');
+    axios.get(`${BASE_URL}games/${unity_id}`)
+    .then(function (response) {
+      console.log(response.data);
+      if (response.data.length >= 1) {
+        carrossel = response.data;
+      }
+    })
+    .catch(function (error) {
+      // alert('Erro retornar gamess!')
+    })
+  }
+  console.log(carrossel)
+    // carrossel.map(game => {
+      for (const game of carrossel) {
+      const divContainer = document.createElement('div');
+      const divContainerWthClass = document.createElement('div');
+      divContainerWthClass.classList.add('j-area-items');
+      const article = document.createElement('article');
+      article.classList.add('j-carrossel__slide');
+      divContainer.appendChild(divContainerWthClass);
+      divContainerWthClass.appendChild(article);
+
+
+      const h2Titulo = document.createElement('h2');
+      h2titulo.classList.add('j-carrossel__titulo');
+      let carrosselTitulo = document.createTextNode(game.name);
+      h2Titulo.appendChild(carrosselTitulo);
+      const divImg = document.createElement('div');
+      divImg.classList.add('j-carrossel__img');
+      const img = document.createElement('div');
+      img.classList.add('j-carrossel__img__img');
+      img.setAttribute('src',`../styles/imagens/${game.slug}.png`);
+      divImg.appendChild(img);
+      article.appendChild(h2Titulo,divImg);
+
+
+      const divContainerBotao = document.createElement('div');
+      divContainerBotao.classList.add('j-carrossel__caixa-botao');
+      const link = document.createElement('a');
+      link.classList.add('j-carrossel__botao');
+      link.setAttribute("type", "button");
+      link.setAttribute("name", "button_entrar");
+      link.setAttribute("href", `jogos.html?unity_id=${unity_id}&game_id=${game.id}`);
+      const linkText = document.createTextNode('entrar na fila');
+      link.appendChild(linkText);
+      const span = document.createElement('span');
+      link.classList.add('material-icons j-carrossel__seta');
+      const spanText = document.createTextNode('east');
+      span.appendChild(spanText);
+      link.appendChild(span);
+      divContainerWthClass.appendChild(link);
+
+      carrosselTeste.appendChild(divContainer);
+    // });
+    }
+  // console.log('divContainer',carrosselTeste)
+
+  // carrosselTeste.innerHTML = carrossel;
+  /* new Glider(carrosselTeste, {
+    slidesToShow: 3,
+    slidesToScroll: 1,
+  }); */
+  /*  $('.js-carrossel').slick({
+     slidesToShow: 3,
+     slidesToScroll: 1,
+     dots: true,
+     infinite: true,
+     responsive: [{
+         breakpoint: 1024,
+         settings: {
+           slidesToShow: 2,
+           slidesToScroll: 2,
+           infinite: true,
+           dots: true
+         }
+       },
+       {
+         breakpoint: 900,
+         settings: {
+           slidesToShow: 2,
+           slidesToScroll: 2
+         }
+       },
+       {
+         breakpoint: 768,
+         settings: {
+           slidesToShow: 1,
+           slidesToScroll: 1,
+           dots: false
+         }
+       }
+     ],
+     prevArrow: '<span class="material-icons j-carrossel__seta-voltar">arrow_back_ios</span>',
+     nextArrow: '<span class="material-icons j-carrossel__seta-avancar">arrow_forward_ios</span>',
+   }); */
+
+  // menu hamburgao
+  const button = document.querySelectorAll('.click-event');
+  button.forEach(function (btn) {
+    return btn.addEventListener('click', function () {
+      document.querySelector('.navegacao__container').classList.toggle("visible");
+    })
+  });
+
+
+  // Fim do script do Carrossel
+</script>
+
+</html>

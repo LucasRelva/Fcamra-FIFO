@@ -1,37 +1,47 @@
-const User = require('../models/User')
-
+const User = require("../models/User");
 
 module.exports = {
-    
-    async list(req, res) {
-        const users = await User.findAll();
+  async list(req, res) {
+    const users = await User.findAll();
 
-        if(!users) res.status(404).json({error:'error',msg: 'users not found!'})
-        
-        return res.json(users)
-    },
+    if (!users)
+      res.status(404).json({ error: "error", msg: "users not found!" });
 
-    async store(req, res) {
-        const { email } = req.body
+    return res.json(users);
+  },
 
-        const user = await User.create({ email })
+  async infos(req, res) {
+    const { email } = req.body;
+    const user = await User.findOne({
+        where: {
+            email
+        }
+    });
+    if (!user)
+      res.status(204).json({ error: "error", msg: "user not found!" });
 
-        return res.json(user)
-    },
+    return res.json(user);
+  },
 
-    async delete(req, res) {    
-        const { user_id } = req.params
-        
-        const user = await User.findByPk(user_id)
+  async store(req, res) {
+    const { email } = req.body;
+    const user = await User.create({ email });
+    return res.json(user);
+  },
 
-        if(!user) return res.status(400).json({ error: 'User not found' })
-        
-        await user.destroy({
-            where: {
-                id: user_id
-            }
-        })
+  async delete(req, res) {
+    const { user_id } = req.params;
 
-        return res.json(user) 
-    },
-}
+    const user = await User.findByPk(user_id);
+
+    if (!user) return res.status(400).json({ error: "User not found" });
+
+    await user.destroy({
+      where: {
+        id: user_id,
+      },
+    });
+
+    return res.json(user);
+  },
+};

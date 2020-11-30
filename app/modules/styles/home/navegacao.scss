@@ -1,0 +1,81 @@
+.navegacao__logo{
+  color: red;
+  width: 6.9054%;
+}
+
+
+
+.navegacao__container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 6.0441%;
+  margin-left: 48px;
+  margin-right: 76px;
+  margin-top: 30px;
+
+
+}
+.navegacao__links {
+  display: flex;
+  li {
+    & + li {margin-left: 60px}
+  }
+}
+.navegacao__botao_burger{ display: none; }
+.navegacao__link{
+  color: #333333;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.navegacao__link:nth-child(2){
+  margin-left: 29.4348%;
+  margin-right: 6.0441%;
+}
+
+.navegacao__link:nth-child(3){
+  margin-right: 6.0441%;
+}
+
+.navegacao__link:nth-child(4){
+  margin-right: 23.7987%;
+}
+
+.navegacao__link:hover{
+  color: #fe4400;
+}
+
+
+
+.jm-navegacao{
+  display: none;
+}
+
+.jm-navegacao__logo{
+
+}
+
+
+.jm-navegacao__usuario{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//

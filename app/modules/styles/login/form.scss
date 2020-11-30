@@ -1,0 +1,52 @@
+
+.form{
+  max-width:460px;
+  width: 100%;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+
+
+.form__input{
+  width: 100%;
+  height: 100%;
+  border-radius: 67px;
+  border: 0;
+  background-color: #f1f1f1;
+  margin-top: 32px;
+  padding-left: 17px;
+  padding-right: 20%;
+
+
+}
+
+
+
+
+.form__botao_submit{
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background-color: #fe885c;
+  border: 0;
+  z-index: 3;
+  position: absolute;
+  left: 80.8695%;
+  top:16px;
+
+
+}
+
+.form__botao_submit:hover{
+  background-color: #fe4400;
+
+}
+
+.form__botao_icone{
+  color: #fff;
+
+}

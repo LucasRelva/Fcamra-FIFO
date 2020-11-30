@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIFO - Entre para jogar</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/estilos-login.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../script/validador.js"></script>
+  </head>
+  <body>
+
+
+  <img  class="logo"src="../styles/imagens/200X150_mobile_bgBRANCO.png" alt="logo-fifo">
+
+  <h1 class="instrucao__email">Entre com seu e-mail</h1>
+
+
+  <div class="form">
+    <input class="form__input" autofocus type="email" required="required" id="email" pattern="[a-z0-9._%+-]+@[fcamara.com.br]" name="" value="" placeholder="@fcamara.com.br">
+    <button class="form__botao_submit" type="button" name="button" onclick="User.submitForm('email')" ><span class="material-icons form__botao_icone">east</span></button>
+  </div>
+
+  <h3 class="visitante__titulo">ou entre sem e-mail</h3>
+  <button class="visitante__botao" type="button" name="button" onclick="User.newUser()">visitante</button>
+
+  <img class="visitante__aviso"src="../styles/imagens/TAG VISITANTE_DESKTOP.png" alt="visitante" />
+
+
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script type="text/javascript" src="../../shared/utils/services/User.js"></script>
+  <script type="text/javascript" src="../../shared/utils/services/Unity.js"></script>
+  <script> Unity.checkNotUnity(); </script>
+</html>

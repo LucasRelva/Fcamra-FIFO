@@ -8,7 +8,7 @@ module.exports = {
   async read(req, res) {
     const { game_id, unity_id } = req.params;
     try {
-      const game = await Game.findAll({
+      const game = await Game.findOne({
         where: {
           id: game_id,
         },
@@ -36,7 +36,7 @@ module.exports = {
             },
           ],
           limit: 1,
-        });
+        })[0];
         if(!next || next.length ===0){
             next = await Game.findOne({
                 include: [
@@ -73,7 +73,7 @@ module.exports = {
           ],
           limit: 1,
           order: [[ 'id' , 'DESC']]
-        });
+        })[0];
         if(!prev){
             prev = await Game.findOne({
                 include: [

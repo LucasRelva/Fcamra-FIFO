@@ -1,5 +1,13 @@
 .nome_logo_grande{
-  font-size: 300px;
-  margin: 0;
-  color: #FC6027;
+  width: 320px;
+}
+
+.nome_input_conteiner{
+	display: flex;
+	
+}
+
+.teste_icone{
+	z-index: 9999;
+	margin-right: 30px;
 }

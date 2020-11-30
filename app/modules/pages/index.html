@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,18 +8,19 @@
   <link rel="stylesheet" href="../styles/estilos-unidade.css">
 
 </head>
-<body class="primeira-pagina" >
 
-
-
+<body class="primeira-pagina">
 
   <img class="selecao_logo_fifo" src="..\styles\imagens\420X315_bgAZUL.png" alt="Fifo logo">
-    <h2 class="selecao_instrucao">Selecione sua unidade FCamara</h2>
-    <div class="selecao_caixa_botao">
-      <a class="selecao_botao"href="#">Santos</a>
-      <a class="selecao_botao" href="#">São Paulo</a>
-    </div>
+  <h2 class="selecao_instrucao">Selecione sua unidade FCamara</h2>
+  <div class="selecao_caixa_botao" id="area-buttons"></div>
 
 
-  </body>
-  </html>
+</body>
+<script type="text/javascript" src="../../shared/utils/services/Unity.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+  Unity.init('area-buttons');
+</script>
+
+</html>
