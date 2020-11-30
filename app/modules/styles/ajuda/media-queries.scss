@@ -1,0 +1,23 @@
+@media (max-width:370px){
+
+  $font-passo360:16px;
+
+  .instrucao__ilustra_dispositivos
+  ,.instrucao__ilustra_jogos
+  ,.instrucao__ilustra_botao
+  ,.instrucao__ilustra_cafe{
+    display: none;
+
+  }
+
+  .instrucao__texto-1
+  ,.instrucao__texto-2
+  ,.instrucao__texto-3
+  ,.instrucao__texto-4{
+    font-size: $font-passo360;
+  }
+
+
+
+
+}

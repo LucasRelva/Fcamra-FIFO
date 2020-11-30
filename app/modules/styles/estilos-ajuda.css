@@ -332,7 +332,8 @@ body {
   font-family: 'Metropolis Medium';
   min-height: 100vh;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  line-height: 1.25; }
 
 @font-face {
   font-family: 'Metropolis';
@@ -352,72 +353,174 @@ body {
 @font-face {
   font-family: 'Metropolis SemiBold';
   src: url("../styles/helpers/fonts/Metropolis-SemiBold.otf"); }
-.instrucao__caixa-1 {
-  height: 360px;
+@font-face {
+  font-family: 'Metropolis Black';
+  src: url("../styles/helpers/fonts/Metropolis-Black.otf"); }
+.instrucao__caixa_pular {
+  display: flex;
+  width: 48px;
+  height: 70px;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: absolute;
+  left: 86.25%;
+  right: 13.1578%;
+  top: 4.3859%;
+  cursor: pointer; }
+
+.instrucao__seta {
+  width: 48px;
+  color: #787878;
+  text-align: center; }
+
+.instrucao__botao_pular {
+  font-family: 'Metropolis Regular';
+  font-size: 18px;
+  border: 0;
+  color: #787878;
+  background-color: #fff; }
+
+.instrucao__caixa_intro {
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center; }
+  .instrucao__caixa_intro .instrucao__ilustra_logo {
+    margin-top: 79px;
+    width: 191px;
+    position: relative; }
+  .instrucao__caixa_intro .instrucao__intro_texto {
+    font-family: 'Metropolis SemiBold';
+    font-size: 32px;
+    text-align: center;
+    margin-top: 32px; }
+  .instrucao__caixa_intro .instrucao__texto-funciona {
+    font-size: 24px;
+    font-family: 'Metropolis Medium';
+    color: #787878;
+    margin-top: 32px;
+    margin-bottom: 31px; }
 
-.instrucao__ilustra_logo {
-  margin-top: 79px;
-  width: 191px;
-  position: relative; }
-
-.instrucao__botao_pular {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  position: absolute;
-  left: 1242px; }
-
-.instrucao__texto-1 {
-  font-family: 'Metropolis SemiBold';
-  font-size: 32px;
-  text-align: center;
-  margin-top: 32px; }
-
-.instrucao__texto-funciona {
-  font-size: 24px;
-  font-family: 'Metropolis Medium';
-  color: #787878;
-  margin-top: 32px; }
-
-.instrucao__caixa-2 {
+.instrucao__caixa-1 {
   display: flex;
   height: 360px;
   justify-content: space-around;
   background-color: #fe662e; }
+  .instrucao__caixa-1 .instrucao__texto_caixa-1 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 223px; }
+    .instrucao__caixa-1 .instrucao__texto_caixa-1 .instrucao_numero-1 {
+      font-family: "Metropolis Black";
+      font-size: 64px;
+      color: #c23400;
+      margin-top: 90px; }
+    .instrucao__caixa-1 .instrucao__texto_caixa-1 .instrucao__texto-1 {
+      font-family: 'Metropolis SemiBold';
+      color: #ffffff;
+      font-size: 32px; }
+  .instrucao__caixa-1 .instrucao__ilustra_dispositivos {
+    height: 330px;
+    margin-top: 25px;
+    margin-right: 150px; }
 
-.instrucao__texto-2 {
-  font-family: 'Metropolis SemiBold';
-  color: #ffffff;
-  font-size: 32px;
-  margin-top: 172px; }
-
-.instrucao__ilustra_dispositivos {
-  width: 352px; }
+.instrucao__caixa-2 {
+  display: flex;
+  height: 360px;
+  background-color: #6263ab;
+  justify-content: space-around; }
+  .instrucao__caixa-2 .instrucao__ilustra_jogos {
+    height: 292px;
+    margin: 50px 69px 38px 223px; }
+  .instrucao__caixa-2 .instrucao__texto_caixa-2 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+    margin-right: 223px;
+    text-align: right; }
+    .instrucao__caixa-2 .instrucao__texto_caixa-2 .instrucao_numero-2 {
+      color: #36357e;
+      font-family: "Metropolis Black";
+      font-size: 64px; }
+    .instrucao__caixa-2 .instrucao__texto_caixa-2 .instrucao__texto-2 {
+      font-family: 'Metropolis SemiBold';
+      font-size: 32px;
+      color: #ffffff; }
 
 .instrucao__caixa-3 {
-  height: 360px;
-  background-color: #6263ab; }
-
-.instrucao__texto-3 {
-  font-family: 'Metropolis SemiBold';
-  font-size: 32px; }
-
-.instrucao__caixa-4 {
+  display: flex;
+  justify-content: space-around;
   height: 360px;
   background-color: #e5e5e5; }
+  .instrucao__caixa-3 .instrucao__texto_caixa-3 {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    margin-top: 90px;
+    margin-left: 223px; }
+    .instrucao__caixa-3 .instrucao__texto_caixa-3 .instrucao_numero-3 {
+      font-family: "Metropolis Black";
+      font-size: 64px;
+      color: #787878; }
+    .instrucao__caixa-3 .instrucao__texto_caixa-3 .instrucao__texto-3 {
+      font-family: "Metropolis SemiBold";
+      font-size: 32px; }
+  .instrucao__caixa-3 .instrucao__ilustra_botao {
+    height: 260px;
+    margin-top: 60px;
+    margin-right: 222px; }
 
-.instrucao__texto-4 {
-  font-size: 32px; }
-
-.instrucao__caixa-5 {
+.instrucao__caixa-4 {
+  display: flex;
   height: 360px;
-  background-color: #333333; }
+  background-color: #333333;
+  justify-content: space-around; }
+  .instrucao__caixa-4 .instrucao__ilustra_cafe {
+    height: 340px;
+    margin-top: 20px;
+    margin-left: 193px; }
+  .instrucao__caixa-4 .instrucao__texto_caixa-4 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 93px;
+    text-align: right;
+    margin-right: 222px; }
+    .instrucao__caixa-4 .instrucao__texto_caixa-4 .instrucao_numero-4 {
+      font-family: "Metropolis Black";
+      font-size: 64px;
+      color: #787878; }
+    .instrucao__caixa-4 .instrucao__texto_caixa-4 .instrucao__texto-4 {
+      font-family: "Metropolis SemiBold";
+      font-size: 32px;
+      color: #ffffff; }
 
-.instrucao__texto-5 {
-  font-size: 32px; }
+.instruca__botao_caixa {
+  height: 224px;
+  display: flex;
+  justify-content: center;
+  margin: 80px 602px 77.7px 603px; }
+
+.instrucao__botao {
+  font-family: "Metropolis Bold";
+  width: 235px;
+  height: 66px;
+  font-size: 24px;
+  border-radius: 8px;
+  background-color: #fe4400;
+  border: 0; }
+
+@media (max-width: 370px) {
+  .instrucao__ilustra_dispositivos
+  , .instrucao__ilustra_jogos
+  , .instrucao__ilustra_botao
+  , .instrucao__ilustra_cafe {
+    display: none; }
+
+  .instrucao__texto-1
+  , .instrucao__texto-2
+  , .instrucao__texto-3
+  , .instrucao__texto-4 {
+    font-size: 16px; } }
 
 /*# sourceMappingURL=estilos-ajuda.css.map */
