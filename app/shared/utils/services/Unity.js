@@ -35,7 +35,7 @@ function UnityClass() {
 
   this.setUnity = function (unity) {
     localStorage.setItem('unity',unity)
-    window.location = 'home-jogos.html';
+    window.location = 'login.html';
   }
 
   this.getUnity = function () {

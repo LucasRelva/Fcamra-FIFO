@@ -17,16 +17,21 @@
   <h1 class="instrucao__email">Entre com seu e-mail</h1>
 
 
-  <form class="form" action="home-jogos.html" method="post">
+  <div class="form">
     <input class="form__input" autofocus type="email" required="required" id="email" pattern="[a-z0-9._%+-]+@[fcamara.com.br]" name="" value="" placeholder="@fcamara.com.br">
-    <button class="form__botao_submit" type="submit" name="button"><span class="material-icons form__botao_icone" >east</span></button>
-  </form>
+    <button class="form__botao_submit" type="button" name="button" onclick="User.submitForm('email')" ><span class="material-icons form__botao_icone">east</span></button>
+  </div>
 
   <h3 class="visitante__titulo">ou entre sem e-mail</h3>
-  <button class="visitante__botao"type="button" name="button">visitante</button>
+  <button class="visitante__botao" type="button" name="button" onclick="User.newUser()">visitante</button>
 
-  <img class="visitante__aviso"src="../styles/imagens/TAG VISITANTE_DESKTOP.png" alt="">
+  <img class="visitante__aviso"src="../styles/imagens/TAG VISITANTE_DESKTOP.png" alt="visitante" />
 
 
   </body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script type="text/javascript" src="../../shared/utils/services/User.js"></script>
+  <script>
+    // User.checkUser();
+  </script>
 </html>

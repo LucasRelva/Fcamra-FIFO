@@ -24,7 +24,6 @@ function JogosClass() {
 
   this.loadBoxes = function (idContainer) {
     const container = document.getElementById(idContainer);
-    // console.log(this.jogos)
     if (this.jogos && container) {
       for (const game of this.jogos) {
         /**

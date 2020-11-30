@@ -3,7 +3,7 @@ function WaitClass() {
   this.jogando = [];
   let jogador;
   let esparaLista = [];
-  let BASE_URL = "http://localhost:8000/";
+  const BASE_URL = "http://localhost:8000/";
 
   this.init = async function (unity_id, game_id, infoJogador) {
     // jogador = name
@@ -35,19 +35,7 @@ function WaitClass() {
 
   this.setHTMLWait = async function () {
     const container = document.getElementById("area-fila");
-    /* 
-      <ul class="fila ja">
-        <li>Jogando Agora</li>
-        <li><span class="material-icons position-player">sports_esports </span> Player1</li>
-        <li><span class="material-icons position-player">sports_esports </span> Player2</li>
-      </ul>
-      <ul class="fila es">
-        <li>Espera</li>
-        <li><span class="position-player">#<span> Player3</li>
-        <li># Player4</li>
-        <li class="before-user"># Player5</li>
-        <li class="user"># me</li>
-      </ul> */
+    
     const jogando = document.createElement("ul");
     jogando.classList.add("fila", "ja");
     const liJogandoT = document.createElement("li");
@@ -77,7 +65,6 @@ function WaitClass() {
     espera.appendChild(liEsperaT);
     if (this.espera.length >= 1) {
       let i = 1;
-      const total
       for (const esp of this.espera) {
         const userEmail = checkUser(esp.user.email);
         const li = document.createElement("li");
