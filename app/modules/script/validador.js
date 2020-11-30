@@ -1,10 +1,10 @@
-$(document).on('click','.botao',function(){
-	var nome = $('.nome_input').val()
+$(document).on('click','.form__botao_submit',function(){
+	var nome = $('.form__input').val()
 	if(nome == ""){
-		$('.nome_input').addClass('erro') 
+		$('.form__input').addClass('erro')
+		alert('Digite seu email');
 		return
-	} else if($('.nome_input').hasClass('erro')){
-		$('.nome_input').removeClass('erro')
+	} else if($('.form__input').hasClass('erro')){
+		$('.form__input').removeClass('erro')
 	}
-
 });
